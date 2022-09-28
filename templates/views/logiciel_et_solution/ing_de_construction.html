@@ -1,0 +1,109 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block title %}Ingéniérie de construction{% endblock title %}
+
+{% block body %}
+<header>
+    <div class="edge-header"></div>
+</header>
+<main class="mt-3 home-st">
+    <div class="container">
+        <nav aria-label="breadcrumb">
+            <ol class="breadcrumb">
+                <li class="breadcrumb-item"><a href="{% url 'accueil' %}">Accueil</a></li>
+                <li class="breadcrumb-item"><a href="{% url 'logiciel_cao' %}">Produits</a></li>
+                <li class="breadcrumb-item active">Ingéniérie de construction</li>
+            </ol>
+        </nav>
+        <section class="mt-4">
+            <div id="mdb-lightbox-ui"></div>
+                <div class="mdb-lightbox">
+                    <div class="row">
+                        <figure class="col-md-4">
+                            <a href="{% static 'frontend/img/products/thumbnail/reinforcement-funnel.jpg' %}"
+                                data-size="1600x1067" data-toggle="modal" data-target="#im1">
+                                <img src="{% static 'frontend/img/products/thumbnail/reinforcement-funnel.jpg' %}"
+                                    class="img-fluid" loading="lazy" alt="reinforcement"/>
+                            </a>
+                        </figure>
+
+                        <figure class="col-md-4">
+                            <a href="{% static 'frontend/img/products/thumbnail/terrain-model.jpg' %}"
+                                data-size="1600x1067" data-toggle="modal" data-target="#im2">
+                                <img src="{% static 'frontend/img/products/thumbnail/terrain-model.jpg' %}"
+                                    class="img-fluid" loading="lazy" alt="terrain"/>
+                            </a>
+                        </figure>
+
+                        <figure class="col-md-4">
+                            <a href="{% static 'frontend/img/products/thumbnail/reinforcement-plan.jpg' %}"
+                                data-size="1600x1067" data-toggle="modal" data-target="#im3">
+                                <img src="{% static 'frontend/img/products/thumbnail/reinforcement-plan.jpg' %}"
+                                    class="img-fluid" loading="lazy" alt="plan"/>
+                            </a>
+                        </figure>
+                    </div>
+                </div>
+            
+            <div class="row">
+                <div class="col-md-8 mb-4">
+                    <div class="card mb-4 wow fadeIn">
+                        <div class="card-body">
+
+                            <h2 class="my-4 ">Planification de l’ingénierie des ponts et des structures avec STRAKON
+                            </h2>
+                            <p class="h5 my-4 p-s">
+                                En plus de la construction, le logiciel de CAO STRAKON vous offre:
+                            <ul class="p-s">
+                                <li>planification automatisée individuelle des superstructures de pont, y compris
+                                    avec
+                                    le changement de pente transversale, les changements de section transversale,
+                                    l’élargissement, l’affleurement …</li>
+                                <li>Saisie manuelle ou importation des fichiers correspondants depuis les routes,
+                                    pentes, D40, D21</li>
+                                <li>création automatique de routes en 3D avec des clothoïdes, des arcs, des
+                                    paraboles,
+                                    etc.</li>
+                                <li>coupes courbes</li>
+                                <li>évaluations automatiques, par exemple table de hauteur dans des grilles
+                                    auto-définissables</li>
+                                <li>Planification 3D / BIM de culées, tunnels, réservoirs ronds, tours de centrales,
+                                    etc. avec la technologie BIM moderne « STRAKON-Cube ».</li>
+                                <li>de beaux plans professionnels 2D ou 3D à la suite</li>
+                                <li>coordonnées mondiales (Gauß-Krüger, UTM) et étiquettes de points</li>
+                                <li>Interface IFC</li>
+                                <li>import de modèles de terrain 3D via REB, OKSTRA, LandXML</li>
+                                <li>Possibilités de présentation 3D / BIM du plus fin sur le plan, en image ou en
+                                    direct
+                                </li>
+                                <li>meilleure planification des armatures pour les ponts et les ouvrages d’art</li>
+                                <li>construction immobilière, génie civil, génie civil, construction industrielle,
+                                    construction de ponts, construction de tunnels, construction de centrales
+                                    électriques, pièces préfabriquées, pièces préfabriquées unitisées</li>
+                            </ul>
+                            </p>
+
+
+
+                        </div>
+
+                    </div>
+                </div>
+                <div class="col-md-4 mb-4">
+                    {% include "sidebar.html" %}
+                </div>
+        </section>
+    </div>
+</main>
+
+
+{% endblock body %}
+
+{% block extrajs %}
+<script type="text/javascript" src="{% static 'frontend/js/mdb.min.js' %}"></script>
+<script>
+    $(function () {
+        $("#mdb-lightbox-ui").load("{% static 'frontend/mdb-addons/mdb-lightbox-ui.html' %}");
+    });
+</script>
+{% endblock extrajs %}

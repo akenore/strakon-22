@@ -1,0 +1,79 @@
+{% extends "base.html" %}
+{% load static %}
+{% block title %} Licence {% endblock title %}
+
+{% block body %}
+<header>
+    <div class="edge-header"></div>
+</header>
+<main class="home-st">
+    <div class="container">
+        <nav aria-label="breadcrumb">
+            <ol class="breadcrumb">
+                <li class="breadcrumb-item"><a href="{% url 'accueil' %}">Accueil</a></li>
+                <li class="breadcrumb-item active">Licence</li>
+            </ol>
+        </nav>
+        <div class="card">
+            <div class="card-body">
+                <p class="card-text" style="font-size:1.1rem">
+                <ul class="p-s">
+                    <li>La licence d'étudiant est <strong>gratuite</strong> pour les étudiants et les apprentis pour une
+                        utilisation non commerciale.</li>
+                    <li>Le savoir-faire de STRAKON offre de <strong>bonnes opportunités d'emploi</strong> dans le
+                        domaine de l'ingénierie des structures et de la préfabrication au sein de la clientèle
+                        importante et bien connue de DICAD Systeme GmbH.</li>
+                    <li><strong>Les licences gratuites</strong> sont avantageuses pour le budget de votre établissement
+                        d'enseignement.</li>
+                    <li>Organisez des <strong>séminaires gratuits</strong> pour préparer vos enseignants à leur travail
+                        quotidien et améliorer la qualité de l'éducation de vos élèves et étudiants. De plus, vous vous
+                        assurez que votre <strong>établissement d'enseignement </strong>a une <strong>bonne
+                            image</strong> dans l'économie.</li>
+                    <li>DICAD vous accompagne dans vos conférences ou séminaires. Cela peut être une fois par semestre
+                        ou tout au long du semestre. L'accent est mis sur l'enseignement de connaissances spécialisées
+                        sur le sujet des noms de domaine en : "Configuration de l'armature dans le génie civil et la
+                        construction préfabriquée en béton".</li>
+                </ul>
+
+                </p>
+            </div>
+        </div>
+        <hr class="my-3">
+        <div class="card">
+            <div class="card-body">
+                <h4 class="card-title">Delivery</h4>
+                <p class="card-text" style="font-size:1.1rem">
+                <ul class="p-s">
+                    <li>STRAKON premium version complète premium pour une utilisation non commerciale (licence étudiante
+                        gratuite)</li>
+                    <li>Ingénierie structurelle 2D/3D/BIM</li>
+                    <li>Interfaces DWG-/PDF-/IFC</li>
+                    <li>Manuels d'utilisation et vidéos via la barre de menu d'aide " ? dans STRAKON</li>
+                </ul>
+                </p>
+            </div>
+        </div>
+        <hr class="my-3">
+        <div class="card">
+            <div class="card-body">
+                <h4 class="card-title">Commander une licence</h4>
+                <div class="row">
+                    <div class="col-md-6">
+                        
+                        <p class="card-text" style="font-size:1.1rem">
+                            Étudiants :
+                        </p>
+                        <a href="{% url 'etudiant' %}" class="btn btn-primary">Commande de la licence d'étudiant</a>
+                    </div>
+                    <div class="col-md-6">
+                        <p class="card-text" style="font-size:1.1rem">
+                            Établissements d'enseignement :
+                        </p>
+                        <a href="{% url 'educative' %}" class="btn btn-primary">Commande de la licence éducative</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</main>
+{% endblock body %}

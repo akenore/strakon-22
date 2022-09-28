@@ -1,0 +1,93 @@
+{% extends "views/admin/admin.html" %}
+{% load static %}
+{% block title %}Demandes des licences éducative{% endblock title %}
+
+{% block body %}
+<main>
+    <div class="container-fluid">
+        <div class="card card-cascade wider reverse my-4 pb-5">
+            <div class="card-body card-body-cascade wow fadeIn" data-wow-delay="0.2s">
+
+                <div class="accordion md-accordion" id="accordionEx1" role="tablist" aria-multiselectable="true">
+                    {% for i in page_obj %}
+
+                    <div class="card">
+
+                        <div class="card-header" role="tab" id="list">
+                            <a class="collapsed" data-toggle="collapse" data-parent="#accordionEx1"
+                                href="#collapseTwo{{i.id}}" aria-expanded="false" aria-controls="collapseTwo{{i.id}}">
+                                <h6 class="mb-0">
+                                    Licence éducative pour: <span class="text-primary">{{ i.name }}</span>
+                                    <i class="fas fa-angle-down rotate-icon"></i>
+
+                                </h6>
+                            </a>
+                        </div>
+
+                        <div id="collapseTwo{{i.id}}" class="collapse" role="tabpanel" aria-labelledby="list"
+                            data-parent="#accordionEx1">
+                            <div class="card-body">
+                                <div class="row">
+                                    <div class="col-md-6">
+                                        <h6 class="text-info">Information de contact</h6>
+                                        <hr>
+                                        <p><span class="text-primary">Nom:</span> {{ i.name }}</p>
+                                        <p><span class="text-primary">E-mail:</span> {{ i.email }}</p>
+                                        <p><span class="text-primary">Téléphone/Mobile:</span> {{ i.telephone }}</p>
+                                        <p><span class="text-primary">Adresse:</span> {{ i.address }}</p>
+                                        <p><span class="text-primary">Code postal:</span> {{ i.code_postal }}</p>
+                                        <p><span class="text-primary">Pays:</span> {{ i.pays }}</p>
+                                    </div>
+                                    <div class="col-md-6">
+                                        <h6 class="text-info">Détail de la demande</h6>
+                                        <hr>
+                                        <p><span class="text-primary">Commandez:</span> {{i.commande}}</p>
+                                        <p><span class="text-primary">Domaine:</span> {{i.domaine}}</p>
+                                        
+                                        <p><span class="text-primary">Répondre à:</span><a href="mailto:{{ i.email }}?subject=Licence Établissements d'enseignement" class="btn btn-info btn-sm"><strong> {{ i.name }}</strong> ?
+                                            </a></p>
+                                    </div>
+                                    <div class="col-md-12">
+                                        <p class="float-right"><span class="text-primary">Date d'enregistrement de la
+                                                demande:</span>
+                                            {{i.post_date}}</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                    </div>
+                    {% endfor %}
+
+                </div>
+                <div class="text-center mb-5">
+                    <nav class="pagination justify-content-center" aria-label="Page navigation example">
+                        <ul class="step-links pagination pg-blue">
+                            {% if page_obj.has_previous %}
+                            <li class="page-item"><a class="page-link" href="?page=1"><i
+                                        class="fas fa-angle-double-left mr-2"></i>
+                                    premier</a></li>
+                            <li class="page-item"><a class="page-link"
+                                    href="?page={{ page_obj.previous_page_number }}">précédent</a>
+                            </li>
+                            {% endif %}
+
+                            <li class="current page-item mx-3">
+                                Page {{ page_obj.number }} de {{ page_obj.paginator.num_pages }}.
+                            </li>
+
+                            {% if page_obj.has_next %}
+                            <li class="page-item"><a class="page-link"
+                                    href="?page={{ page_obj.next_page_number }}">suivant</a></li>
+                            <li class="page-item"><a class="page-link"
+                                    href="?page={{ page_obj.paginator.num_pages }}">dernier<i
+                                        class="fas fa-angle-double-right ml-2"></i></a></li>
+                            {% endif %}
+                        </ul>
+                    </nav>
+                </div>
+            </div>
+        </div>
+    </div>
+</main>
+{% endblock body %}

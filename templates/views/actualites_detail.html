@@ -1,0 +1,48 @@
+{% extends "base.html" %}
+{% load static %}
+{% block title %} {{ object.name }} {% endblock title %}
+{% block extrahead %}
+<style>
+    p {
+        font-family: 'Roboto', sans-serif;
+
+        font-weight: 300;
+        font-size: 18px;
+        color: #58585a;
+    }
+</style>
+{% endblock extrahead %}
+{% block body %}
+<header>
+    <div class="edge-header"></div>
+</header>
+<main class="home-st">
+    <div class="container">
+        <nav aria-label="breadcrumb">
+            <ol class="breadcrumb">
+                <li class="breadcrumb-item"><a href="{% url 'accueil' %}">Accueil</a></li>
+                <li class="breadcrumb-item"><a href="{% url 'blog' %}">Actualités</a></li>
+                <li class="breadcrumb-item active">{{ object.name }}</li>
+            </ol>
+        </nav>
+
+        <section>
+            <div class="row">
+                <div class="col-md-8">
+                    <div class="card">
+                        <div class="card-body">
+                            <h3 class="mt-4 mb-5">{{ object.name }}</h3>
+                            <p>
+                                {{ object.view|safe }}
+                            </p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    {% include "sidebar.html" %}
+                </div>
+            </div>
+        </section>
+    </div>
+</main>
+{% endblock body %}

@@ -1,0 +1,42 @@
+{% extends "views/admin/admin.html" %}
+{% load static %}
+{% block title %}Ajouter un article{% endblock title %}
+{% load crispy_forms_tags %}
+{% block body %}
+<main>
+  <div class="container-fluid">
+    <div class="card card-cascade wider reverse my-4 pb-5">
+      <div class="card-body card-body-cascade wow fadeIn" data-wow-delay="0.2s">
+        
+        <form method="POST" , enctype="multipart/form-data">{% csrf_token %}
+          <div class="row">
+            <div class="col-md-8">
+              {{ form.name|as_crispy_field }}
+              {{ form.view|as_crispy_field }}
+              {{ form.media }}
+            </div>
+            <div class="col-md-4">
+              <button class="btn btn-primary btn-lg btn-block mb-5" type="submit">Publier</button>
+              <hr>
+              <div class="md-form">
+                <div class="file-field">
+                  <div class="btn btn-dark btn-sm float-left">
+                    <span>Choisissez une image</span>
+                    {{ form.image }}
+                  </div>
+                  <div class="file-path-wrapper">
+                    <input class="file-path validate" type="text" placeholder="*.jpg *.png">
+                  </div>
+                </div>
+              </div>
+
+              <hr>
+              {{ form.category|as_crispy_field }}
+            </div>
+          </div>
+        </form>
+      </div>
+    </div>
+  </div>
+</main>
+{% endblock body %}

@@ -1,0 +1,104 @@
+{% extends "base.html" %} {% load static %} {% block title %} Formation et
+videos {% endblock title %} {% block extrahead %}
+<style>
+  iframe{
+    width: 100%;
+    height: 200px;
+  }
+  
+
+  body {
+    margin-top: 0;
+  }
+</style>
+{% endblock extrahead %} {% block body %}
+<header>
+  <div class="edge-header"></div>
+</header>
+<main>
+  <div class="container">
+    <nav aria-label="breadcrumb">
+      <ol class="breadcrumb">
+        <li class="breadcrumb-item">
+          <a href="{% url 'accueil' %}">Accueil</a>
+        </li>
+        <li class="breadcrumb-item active">Formation et videos</li>
+      </ol>
+    </nav>
+    <div class="alert alert-warning col-md-6">
+      
+      <p>
+        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-exclamation-circle-fill" viewBox="0 0 16 16">
+        <path d="M16 8A8 8 0 1 1 0 8a8 8 0 0 1 16 0zM8 4a.905.905 0 0 0-.9.995l.35 3.507a.552.552 0 0 0 1.1 0l.35-3.507A.905.905 0 0 0 8 4zm.002 6a1 1 0 1 0 0 2 1 1 0 0 0 0-2z"/>
+      </svg> 
+        Télécharger STRAKON 2022 <a href="https://download.strakon.fr/2022/STRAKON_2022-2.zip" target="_blank">clique ici</a></p>
+    </div>
+    
+    <div class="row">
+      <div class="col-md-12">
+        <h3 class="ms-3">Strakon débutant BIM</h3>
+        <hr>
+      </div>
+      
+      {% for video in object_list %}
+      {% if video.category == 'BIM' %}
+      <div class="col-md-4 mb-4 d-flex align-items-stretch">
+        <div class="card">
+          <div class="card-img-top">
+            <iframe
+               src="https://www.youtube-nocookie.com/embed/{{video.code}}"
+               title="YouTube video player"
+               frameborder="0"
+               allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+               allowfullscreen>
+            </iframe>
+          </div>
+          <div class="card-body">
+            <h6 class="card-title">{{video.name}}</h6>
+          </div>
+        </div>
+      </div>
+        {% endif %}
+        {% endfor %}
+      </div>
+      
+      <div class="row">
+        <div class="col-md-12">
+          <h3 class="ms-3">Conseils et astuces pour Strakon</h3>
+          <hr>
+        </div>
+        
+        {% for video in object_list %}
+        {% if video.category == 'TIPS' %}
+        <div class="col-md-4 mb-4 d-flex align-items-stretch">
+          <div class="card">
+            <div class="card-img-top">
+              <iframe
+                  src="https://www.youtube-nocookie.com/embed/{{video.code}}"
+                  title="YouTube video player"
+                  frameborder="0"
+                  allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                  allowfullscreen
+              ></iframe>
+            </div>
+            <div class="card-body">
+              <h6 class="card-title">{{video.name}}</h6>
+            </div>
+          </div>
+        </div>
+        {% endif %}
+        {% endfor %}
+      </div>
+      <div class="alert alert-warning col-md-6">
+      
+        <p>
+          <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-exclamation-circle-fill" viewBox="0 0 16 16">
+          <path d="M16 8A8 8 0 1 1 0 8a8 8 0 0 1 16 0zM8 4a.905.905 0 0 0-.9.995l.35 3.507a.552.552 0 0 0 1.1 0l.35-3.507A.905.905 0 0 0 8 4zm.002 6a1 1 0 1 0 0 2 1 1 0 0 0 0-2z"/>
+        </svg> 
+          Télécharger STRAKON 2022 <a href="https://download.strakon.fr/2022/STRAKON_2022-2.zip" target="_blank">clique ici</a></p>
+      </div>
+    
+  </div>
+</main>
+
+{% endblock body %}

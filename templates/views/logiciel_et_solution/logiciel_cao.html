@@ -1,0 +1,203 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block title %}Logiciels et solutions{% endblock title %}
+
+{% block body %}
+<header>
+    <div class="edge-header"></div>
+</header>
+<main class="home-st">
+    <div class="container">
+        <nav aria-label="breadcrumb">
+            <ol class="breadcrumb">
+                <li class="breadcrumb-item"><a href="{% url 'accueil' %}">Accueil</a></li>
+                <li class="breadcrumb-item active">Logiciels et solutions</li>
+            </ol>
+        </nav>
+        <hr class="my-3">
+        <div class="row">
+            <div class="col-md-4 mb-4 d-flex align-items-stretch">
+                <div class="card">
+                    <div class="view overlay">
+                        <img class="card-img-top"
+                            src="{% static 'frontend/img/products/construction_engineering.jpg' %}"
+                            alt="construction" loading="lazy" width="210" height="118">
+                        <a>
+                            <div class="mask rgba-white-slight"></div>
+                        </a>
+                    </div>
+                    <div class="card-body">
+                        <a href="{% url 'ing_de_construction' %}" class="black-text">
+                            <h5 onmouseover="this.style.color='#fbba00';" onmouseout="this.style.color='#006cb8';"
+                                style="color:#006cb8">Ingéniérie de construction </h5>
+                        </a>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-4 mb-4 d-flex align-items-stretch">
+                <div class="card">
+                    <div class="view overlay">
+                        <img class="card-img-top" src="{% static 'frontend/img/products/structural_design.jpg' %}"
+                            alt="design" loading="lazy" width="210" height="118">
+                        <a>
+                            <div class="mask rgba-white-slight"></div>
+                        </a>
+                    </div>
+                    <div class="card-body">
+                        <a href="{% url 'construction_de_batiment' %}" class="black-text">
+                            <h5 onmouseover="this.style.color='#fbba00';" onmouseout="this.style.color='#006cb8';"
+                                style="color:#006cb8">Construction de bâtiments </h5>
+                        </a>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-4 mb-4 d-flex align-items-stretch">
+                <div class="card">
+                    <div class="view overlay">
+                        <img class="card-img-top"
+                            src="{% static 'frontend/img/products/structural_precast_parts.jpg' %}"
+                            alt="piéces préfabriquées" loading="lazy" width="210" height="118">
+                        <a>
+                            <div class="mask rgba-white-slight"></div>
+                        </a>
+                    </div>
+                    <div class="card-body">
+                        <a href="{% url 'pieces_pref_structurelles' %}" class="black-text">
+                            <h5 onmouseover="this.style.color='#fbba00';" onmouseout="this.style.color='#006cb8';"
+                                style="color:#006cb8">Pièces préfabriquées structurelles </h5>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <hr class="my-2">
+        <div class="row">
+            <div class="col-md-4 mb-4 d-flex align-items-stretch">
+                <div class="card">
+                    <div class="view overlay">
+                        <img class="card-img-top" src="{% static 'frontend/img/products/unitized_precast_parts.jpg' %}"
+                            alt="unitisée" loading="lazy" width="210" height="118">
+                        <a>
+                            <div class="mask rgba-white-slight"></div>
+                        </a>
+                    </div>
+                    <div class="card-body">
+                        <a href="{% url 'pieces_pref_unitisees' %}" class="black-text">
+                            <h5 onmouseover="this.style.color='#fbba00';" onmouseout="this.style.color='#006cb8';"
+                                style="color:#006cb8">Pièces préfabriquées unitisées </h5>
+                        </a>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-4 mb-4 d-flex align-items-stretch">
+                <div class="card">
+                    <div class="view overlay">
+                        <img class="card-img-top" src="{% static 'frontend/img/products/architecture-facade.jpg' %}"
+                            alt="Archtecture" loading="lazy" width="210" height="118">
+                        <a>
+                            <div class="mask rgba-white-slight"></div>
+                        </a>
+                    </div>
+                    <div class="card-body">
+                        <a href="{% url 'architecture_ing_en_structure' %}" class="black-text">
+                            <h5 onmouseover="this.style.color='#fbba00';" onmouseout="this.style.color='#006cb8';"
+                                style="color:#006cb8">Architecture pour les ingénieurs en structure </h5>
+                        </a>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-4 mb-4 d-flex align-items-stretch">
+                <div class="card">
+                    <div class="view overlay">
+                        <img class="card-img-top" src="{% static 'frontend/img/products/ifc4_process.jpg' %}"
+                            alt="ifc4" loading="lazy" width="210" height="118">
+                        <a>
+                            <div class="mask rgba-white-slight"></div>
+                        </a>
+                    </div>
+                    <div class="card-body">
+                        <a href="{% url 'bim' %}" class="black-text d-flex justify-content-end">
+                            <h5 onmouseover="this.style.color='#fbba00';" onmouseout="this.style.color='#006cb8';"
+                                style="color:#006cb8">BIM - Modélisation des informations du bâtiment </h5>
+                        </a>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="col-md-4 mb-4 d-flex align-items-stretch">
+                <div class="card">
+                    <div class="view overlay">
+                        <img class="card-img-top" src="{% static 'frontend/img/products/interfaces.png' %}"
+                            alt="interface" loading="lazy" width="210" height="118">
+                        <a>
+                            <div class="mask rgba-white-slight"></div>
+                        </a>
+                    </div>
+                    <div class="card-body">
+                        <a href="{% url 'interfaces' %}" class="black-text">
+                            <h5 onmouseover="this.style.color='#fbba00';" onmouseout="this.style.color='#006cb8';"
+                                style="color:#006cb8">Interfaces </h5>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <hr class="my-4">
+        <div class="col-md-12">
+            <div class="card">
+
+                <div class="card-body">
+                    <h4 class="card-title">STRAKON - Le logiciel BIM-CAD pour le génie civil, la construction de
+                        bâtiments et la construction préfabriquée pour la conception de structures.</h4>
+                    <p class="card-text" style="font-size:1.1rem">
+                        STRAKON est un système de CAO 2D / 3D / BIM pour la <strong>conception structurelle</strong>.
+                        L’accent est mis sur la planification du coffrage et du renforcement.
+                        Vous pouvez créer des plans <strong>2D ou 3D</strong>. Vous pouvez modifier le projet en BIM
+                        (</strong>Building Information Modeling</strong>) ou uniquement en 3D ou en 2D.
+                        Le concepteur ou le chef de projet peut décider au sein d’un projet quelle méthode est requise
+                        ou utile.
+                        Comme les changements au cours de la phase de planification et de construction sont très
+                        fréquents,
+                        un degré élevé de confort de modification est très important. De plus,
+                        la coopération avec de nombreux participants au projet via un transfert rapide de données
+                        électroniques est absolument essentielle.
+                        STRAKON vous permet de communiquer numériquement avec tous les partenaires du projet, tels que
+                        entrepreneurs, architectes, ingénieurs en structure,
+                        planificateurs de MEP, entreprises de construction, etc. Le BIM, en particulier, requiert de
+                        bonnes interfaces dans la conception des structures,
+                        où les plans de coffrage et de renforcement jouent un rôle central. Ici, <strong>IFC</strong>,
+                        CPIXML ou 3D PDF offrent un très bon standard.
+                    </p>
+                    <p class="card-text" style="font-size:1.1rem">
+                        Avec STRAKON, vous êtes parfaitement positionné dans le domaine de la planification du coffrage
+                        et du renforcement pour le futur.
+                        Le BIM est de plus en plus demandé par les secteurs public et privé.
+                        Il est donc important qu’un système de CAO puisse être intégré de manière optimale dans les
+                        <strong>chaînes de processus BIM</strong> en termes de coffrage et de renforcement.
+                        Le facteur décisif ici est que le BIM doit offrir des avantages à votre bureau – dans ce cas,
+                        STRAKON peut vous aider très bien.
+                        DICAD est membre de <a href="#"><strong>buildingSMART</strong></a> et du groupe de conception
+                        structurelle et travaille activement à l’évolution des méthodes de planification des processus
+                        3D / BIM.
+                    </p>
+                    <p class="card-text" style="font-size:1.1rem">
+                        Avec STRAKON, la planification est centrée sur la planification des coffrages et des armatures
+                        en 2D, 3D et BIM.
+                        Avec STRAKON, vous pouvez travailler dans différents domaines spécialisés.
+                        Un ingénieur en structures constatera que STRAKON soutient parfaitement son point de vue en
+                        matière de génie des structures,
+                        de génie civil, de construction de ponts, de constructions préfabriquées, de constructions
+                        unitaires et bien plus encore.
+                        Mais STRAKON peut également être utilisé pour le processus dans les domaines de l’architecture,
+                        de la construction en acier, de la construction en bois, etc.
+                    </p>
+                    <p class="card-text" style="font-size:1.1rem">
+                        Le nombre croissant d’utilisateurs de STRAKON montre que STRAKON est de plus en plus approuvé et
+                        devient le système standard.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </div>
+</main>
+{% endblock body %}

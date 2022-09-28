@@ -1,0 +1,135 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block title %}Services et assistance{% endblock title %}
+
+{% block body %}
+<header>
+    <div class="edge-header"></div>
+</header>
+<main class="mt-3 home-st">
+    <div class="container">
+        <nav aria-label="breadcrumb">
+            <ol class="breadcrumb">
+                <li class="breadcrumb-item"><a href="{% url 'accueil' %}">Accueil</a></li>
+                <li class="breadcrumb-item active">Services et assistance</li>
+            </ol>
+        </nav>
+        <section class="mt-4">
+            <div class="row">
+                <div class="col-md-4 mb-4 d-flex align-items-stretch">
+                    <div class="card">
+                        <div class="view overlay" style="pointer-events: none;">
+                            <img class="card-img-top"
+                                src="{% static 'frontend/img/services/service-inquiry.png' %}"
+                                alt="service inquiry" loading="lazy">
+                            <a>
+                                <div class="mask rgba-white-slight"></div>
+                            </a>
+                        </div>
+                        <div class="card-body">
+                            <a href="{% url 'demande_presentation' %}" class="black-text">
+                                <h5 onmouseover="this.style.color='#fbba00';" onmouseout="this.style.color='#006cb8';"
+                                    style="color:#006cb8"><i class="fas fa-angle-right"></i> Demande de renseignements
+                                </h5>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-4 mb-4 d-flex align-items-stretch">
+                    <div class="card">
+                        <div class="view overlay" style="pointer-events: none;">
+                            <img class="card-img-top" src="{% static 'frontend/img/services/service-media-library.png' %}"
+                                alt="video" loading="lazy">
+                            <a>
+                                <div class="mask rgba-white-slight"></div>
+                            </a>
+                        </div>
+                        <div class="card-body">
+                            <a href="{% url 'video' %}" class="black-text">
+                                <h5 onmouseover="this.style.color='#fbba00';" onmouseout="this.style.color='#006cb8';"
+                                    style="color:#006cb8"><i class="fas fa-angle-right"></i> Médiathèque </h5>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-4 mb-4 d-flex align-items-stretch">
+                    <div class="card">
+                        <div class="view overlay" style="pointer-events: none;">
+                            <img class="card-img-top"
+                                src="{% static 'frontend/img/services/service-media-library.png' %}"
+                                alt="galerie" loading="lazy">
+                            <a>
+                                <div class="mask rgba-white-slight"></div>
+                            </a>
+                        </div>
+                        <div class="card-body">
+                            <a href="{% url 'galerie' %}" class="black-text">
+                                <h5 onmouseover="this.style.color='#fbba00';" onmouseout="this.style.color='#006cb8';"
+                                    style="color:#006cb8"><i class="fas fa-angle-right"></i> Galerie </h5>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-md-4 mb-4 d-flex align-items-stretch">
+                    <div class="card">
+                        <div class="view overlay" style="pointer-events: none;">
+                            <img class="card-img-top"
+                                src="{% static 'frontend/img/services/service-download.png' %}"
+                                alt="téléchargements" loading="lazy">
+                            <a>
+                                <div class="mask rgba-white-slight"></div>
+                            </a>
+                        </div>
+                        <div class="card-body">
+                            <a href="{% url 'telechargement' %}" class="black-text">
+                                <h5 onmouseover="this.style.color='#fbba00';" onmouseout="this.style.color='#006cb8';"
+                                    style="color:#006cb8"><i class="fas fa-angle-right"></i> Téléchargements </h5>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-4 mb-4 d-flex align-items-stretch">
+                    <div class="card">
+                        <div class="view overlay" style="pointer-events: none;">
+                            <img class="card-img-top"
+                                src="{% static 'frontend/img/services/service-faq.png' %}"
+                                alt="FAQ" loading="lazy">
+                            <a>
+                                <div class="mask rgba-white-slight"></div>
+                            </a>
+                        </div>
+                        <div class="card-body">
+                            <a href="{% url 'faq' %}" class="black-text">
+                                <h5 onmouseover="this.style.color='#fbba00';" onmouseout="this.style.color='#006cb8';"
+                                    style="color:#006cb8"><i class="fas fa-angle-right"></i> FAQ
+                                </h5>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="card">
+
+                <div class="card-body">
+                    <p class="card-text" style="font-size:1.1rem">
+                        Le service DICAD vous offre les informations les plus récentes et les plus importantes sur nos
+                        produits,
+                        des téléchargements actuels et vous offre la possibilité de nous contacter de différentes
+                        manières.
+                    </p>
+                    <p class="card-text" style="font-size:1.1rem">
+                        Nous offrons aux <a href="{% url 'licence' %}"><strong>étudiants</strong></a> en construction de bâtiments et en
+                        ingénierie de la construction la version actuelle
+                        du programme STRAKON pour la durée de leur formation.
+                    </p>
+
+                </div>
+            </div>
+        </section>
+    </div>
+</main>
+
+
+{% endblock body %}

@@ -1,0 +1,38 @@
+{% extends "base.html" %}
+{% load crispy_forms_tags %}
+{% load i18n %}
+{% load account socialaccount %}
+
+{% block title %}{% trans "Sign In" %}{% endblock %}
+
+{% block body %}
+<header>
+    <div class="edge-header"></div>
+</header>
+<main class="home-st">
+    <div class="container">
+        <nav aria-label="breadcrumb">
+            <ol class="breadcrumb">
+                <li class="breadcrumb-item"><a href="{% url 'accueil' %}">Accueil</a></li>
+                <li class="breadcrumb-item active">Connexion</li>
+            </ol>
+        </nav>
+        <div class="card">
+            <div class="card-body">
+                <h1>{% trans "Sign Out" %}</h1>
+
+                <p>{% trans 'Are you sure you want to sign out?' %}</p>
+
+                <form method="post" action="{% url 'account_logout' %}">
+                    {% csrf_token %}
+                    {% if redirect_field_value %}
+                    <input type="hidden" name="{{ redirect_field_name }}" value="{{ redirect_field_value }}" />
+                    {% endif %}
+                    <button type="submit" class="btn btn-dark">{% trans 'Sign Out' %}</button>
+                </form>
+            </div>
+        </div>
+    </div>
+
+</main>
+{% endblock %}

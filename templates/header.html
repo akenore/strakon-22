@@ -1,0 +1,75 @@
+{% load static %}
+
+<nav class="navbar fixed-top navbar-expand-lg navbar-light scrolling-navbar" style="background-color: #fff;">
+    <div class="container">
+      <a class="navbar-brand" href="{% url 'accueil' %}">
+        <img src="{% static 'frontend/img/logo.png' %}" class="logo mx-auto" width="190" height="38"  alt="Strakon" loading="lazy">
+      </a>
+      <button class="navbar-toggler mr-3" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
+        aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarSupportedContent">
+        <ul class="navbar-nav mt-3 mr-auto">
+          
+          <li class="nav-item dropdown">
+              <a href="#!" class="nav-link dropdown-toggle" id="logicielMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"><strong>Logiciel & Solution</strong></a>
+              <div class="dropdown-menu dropdown-primary" aria-labelledby="logicielMenuLink">
+                  <a class="dropdown-item" href="{% url 'logiciel_cao' %}">Logiciel CAO Strakon</a>
+                  <a class="dropdown-item" href="{% url 'ing_de_construction' %}">Ingénierie de construction</a>
+                  <a class="dropdown-item" href="{% url 'construction_de_batiment' %}">Construction de bâtiments</a>
+                  <a class="dropdown-item" href="{% url 'pieces_pref_structurelles' %}">Pièces préfabriquées structurelles</a>
+                  <a class="dropdown-item" href="{% url 'pieces_pref_unitisees' %}">Pièces préfabriquées unitisées</a>
+                  <a class="dropdown-item" href="{% url 'architecture_ing_en_structure' %}">Architecture pour les ingénieurs en structure</a>
+                  <a class="dropdown-item" href="{% url 'bim' %}">BIM</a>
+                  <a class="dropdown-item" href="{% url 'interfaces' %}">Interfaces</a>
+              </div>
+          </li>
+          <li class="nav-item dropdown">
+              <a href="#!" class="nav-link dropdown-toggle" id="serviceMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"><strong>Services</strong></a>
+              <div class="dropdown-menu dropdown-primary" aria-labelledby="serviceMenuLink">
+                  <a class="dropdown-item" href="{% url 'service_et_assistance' %}">Service et assistance</a>
+                  <a class="dropdown-item" href="{% url 'demande_presentation' %}">Demande de renseignements</a>
+                  <a class="dropdown-item" href="{% url 'telechargement' %}">Téléchargement</a>
+                  <a class="dropdown-item" href="{% url 'faq' %}">FAQ</a>
+              </div>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="{% url 'blog' %}"><strong>Actualités</strong>
+            </a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="{% url 'contact' %}"><strong>Contact</strong></a>
+          </li>
+        </ul>
+        <ul class="navbar-nav nav-flex-icons">
+          
+          
+          <li class="nav-item">
+            <a href="{% url 'demande_presentation' %}" class="btn btn-primary btn-sm">Demander Présentation</a>
+          </li>
+          
+          <li class="nav-item dropdown">
+              <a href="#!" class="nav-link" id="rightMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"><i class="fas fa-bars fa-lg ml-3 mr-1"></i>Menu</a>
+              <div class="dropdown-menu dropdown-primary" aria-labelledby="rightMenuLink">
+                  <a class="dropdown-item" href="{% url 'galerie' %}">Galerie</a>
+                  <a class="dropdown-item" href="{% url 'video' %}">Médiathèque</a>
+                  <a class="dropdown-item" href="{% url 'licence' %}">Licence d'étudiant</a>
+                  
+              </div>
+          </li>
+          <li class="nav-item dropdown">
+              <a href="#!" class="nav-link" id="languageMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"><i class="france flag"></i></a>
+              <div class="dropdown-menu dropdown-primary" aria-labelledby="languageMenuLink">
+                  <a class="dropdown-item" href="https://www.dicad.de" target="_blanc"><i class="germany flag"></i>Allemand</a>
+                  <a class="dropdown-item" href="https://www.strakon.com" target="_blanc"><i class="united kingdom flag"></i>Anglais</a>
+                  <a class="dropdown-item" href="http://www.acs-technics.be" target="_blanc"><i class="belgium flag"></i>Flamands</a>
+                  <a class="dropdown-item" href="https://www.strakon.pl" target="_blanc"><i class="poland flag"></i>Polonais</a>
+              </div>
+          </li>
+        </ul>
+
+      </div>
+
+    </div>
+  </nav>

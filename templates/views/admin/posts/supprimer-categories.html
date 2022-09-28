@@ -1,0 +1,22 @@
+{% extends "views/admin/admin.html" %}
+{% load static %}
+{% block title %}Supprimer catégorie{% endblock title %}
+
+{% block body %}
+<main>
+    <div class="container-fluid text-center">
+        <div class="card card-cascade wider reverse my-4 pb-5">
+            <div class="card-body card-body-cascade text-center wow fadeIn" data-wow-delay="0.2s">
+                <form method="POST" enctype="multipart/form-data">
+                    {% csrf_token %}
+                    <p>Vous voulez supprimer la catégorie: <br> <strong class="text-primary">{{ object.name }}</strong> ?</p>
+                    <div class="btn-group" role="group" aria-label="Basic example">
+                        <a href="{% url 'categorie' %}" type="submit" class="btn btn-primary">Annuler</a>
+                        <button type="submit" class="btn btn-danger">Supprimer</button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+</main>
+{% endblock body %}

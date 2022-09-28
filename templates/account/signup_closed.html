@@ -1,0 +1,29 @@
+{% extends "base.html" %}
+
+{% load i18n %}
+
+{% block title %}{% trans "Sign Up Closed" %}{% endblock %}
+
+{% block body %}
+<header>
+    <div class="edge-header"></div>
+</header>
+<main class="home-st">
+    <div class="container">
+        <nav aria-label="breadcrumb">
+            <ol class="breadcrumb">
+                <li class="breadcrumb-item"><a href="{% url 'accueil' %}">Accueil</a></li>
+                <li class="breadcrumb-item active">Inscription</li>
+            </ol>
+        </nav>
+        <div class="card">
+            <div class="card-body">
+                <h1>{% trans "Sign Up Closed" %}</h1>
+
+                <p>{% trans "We are sorry, but the sign up is currently closed." %}</p>
+            </div>
+        </div>
+    </div>
+
+</main>
+{% endblock %}

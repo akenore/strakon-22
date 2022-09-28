@@ -1,0 +1,153 @@
+{% extends "base.html" %}
+{% load static %}
+{% block title %} Hors ligne {% endblock title %}
+{% block body %}
+<main style="margin-top: 90px;">
+
+    <div class="container">
+        <section class="mt-5">
+            <div class="alert alert-warning alert-dismissible fade show" role="alert">
+                <strong>Vous n'êtes actuellement connecté à aucun réseau. <br>Vous utilisez le site avec les dernières
+                    données enregistrées dans votre navigateur</strong>
+                <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+
+        </section>
+        <section class="mt-5">
+            <div class="row">
+                <div class="col col-md-12 mb-4">
+                    <p class="text-center">
+                        <img src="{% static 'frontend/img/ifc.png' %}" class="img-fluid mx-auto" alt="Strakon logo IFC"
+                            style="max-width: 350px;">
+                    <h2 class="mx-auto d-block text-center"
+                        style="font-family: 'Coda', sans-serif;font-size: 2.5rem;color: rgb(88 88 90);">
+                        <span style="font-size:80%;">Le logiciel de CAO BIM pour la conception structurelle</span>
+                    </h2>
+                    </p>
+                </div>
+            </div>
+        </section>
+        <section>
+            <div class="row">
+                <div class="col col-md-12">
+                    <div class="card" style="z-index: 1">
+                        <div class="card-body">
+                            <div class="row">
+                                <div class="col-md-7 table-responsive">
+                                    <h3>Planifier l'avenir avec STRAKON</h3>
+                                    <br>
+                                    <table class="table-sm table-borderless">
+                                        <tbody>
+                                            <tr>
+                                                <td><a class="nav-link"
+                                                        style="color: #006cb8; font-size:17px; font-weight: 400;"
+                                                        onmouseover="this.style.color='#fbba00';"
+                                                        onmouseout="this.style.color='#006cb8';"
+                                                        href="{% url 'ing_de_construction' %}"><strong>Ingénierie de
+                                                            construction</strong></a></td>
+                                                <td style="font-size:17px;">Planification de l'ingénierie des ponts et
+                                                    des structures</td>
+                                            </tr>
+                                            <tr>
+                                                <td><a class="nav-link"
+                                                        style="color: #006cb8; font-size:17px; font-weight: 400;"
+                                                        onmouseover="this.style.color='#fbba00';"
+                                                        onmouseout="this.style.color='#006cb8';"
+                                                        href="{% url 'construction_de_batiment' %}"><strong>Construction
+                                                            de bâtiments</strong></a></td>
+                                                <td style="font-size:17px">Planification du coffrage et de l'armature
+                                                </td>
+                                            </tr>
+                                            <tr>
+                                                <td><a class="nav-link"
+                                                        style="color: #006cb8; font-size:17px; font-weight: 400;"
+                                                        onmouseover="this.style.color='#fbba00';"
+                                                        onmouseout="this.style.color='#006cb8';"
+                                                        href="{% url 'pieces_pref_structurelles' %}"><strong>Pièces
+                                                            préfabriquées structurelles</strong></a></td>
+                                                <td style="font-size:17px">Planification structurelle préfabriquée</td>
+                                            </tr>
+                                            <td><a class="nav-link"
+                                                    style="color: #006cb8; font-size:17px; font-weight: 400;"
+                                                    onmouseover="this.style.color='#fbba00';"
+                                                    onmouseout="this.style.color='#006cb8';"
+                                                    href="{% url 'pieces_pref_unitisees' %}"><strong>Pièces
+                                                        préfabriquées unitisées</strong></a></td>
+                                            <td style="font-size:17px">Planification des pièces préfabriquées unitisées
+                                            </td>
+                                            </tr>
+                                            <td><a class="nav-link"
+                                                    style="color: #006cb8; font-size:17px; font-weight: 400;"
+                                                    onmouseover="this.style.color='#fbba00';"
+                                                    onmouseout="this.style.color='#006cb8';"
+                                                    href="{% url 'architecture_ing_en_structure' %}"><strong>Architecture
+                                                        pour les ingénieurs en structure</strong></a></td>
+                                            <td style="font-size:17px">Planification générale</td>
+                                            </tr>
+                                            <td><a class="nav-link"
+                                                    style="color: #006cb8; font-size:17px; font-weight: 400;"
+                                                    onmouseover="this.style.color='#fbba00';"
+                                                    onmouseout="this.style.color='#006cb8';"
+                                                    href="{% url 'bim' %}"><strong>BIM (Modélisation des informations du
+                                                        bâtiment)</strong></a></td>
+                                            <td style="font-size:17px">Processus de planification optimisé</td>
+                                            </tr>
+                                            <td><a class="nav-link"
+                                                    style="color: #006cb8; font-size:17px; font-weight: 400;"
+                                                    onmouseover="this.style.color='#fbba00';"
+                                                    onmouseout="this.style.color='#006cb8';"
+                                                    href="{% url 'interfaces' %}"><strong>Interfaces</strong></a></td>
+                                            <td style="font-size:17px">Echange de données simple et rapide</td>
+                                            </tr>
+
+                                        </tbody>
+                                    </table>
+                                    <a class="btn btn-primary" href="">Solutions <strong>STRAKON</strong></a>
+                                </div>
+                                <div class="col-md-5">
+                                    <img class="img-fluid" src="{% static 'frontend/img/bim.jpg' %}" alt="BIM">
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </section>
+        <hr class="mb-5">
+        <section>
+            <div class="row">
+                <div class="col-12">
+                    <div class="card" style="z-index: 1">
+                        <div class="card-body">
+                            <div class="row">
+                                <div class="col-md-4">
+                                    <img class="img-fluid" src="{% static 'frontend/img/stakon-ifc4-process.jpg' %}"
+                                        alt="CAD 3D">
+                                </div>
+                                <div class="col-md-8">
+                                    <h2>Modélisation numérique dans le processus BIM</h2>
+                                    <p class="p-s">STRAKON s'intègre dans le processus de planification en tant que
+                                        solution logicielle
+                                        intelligente pour les ingénieurs en structure en mettant l'accent sur la
+                                        technologie BIM.
+                                        Grâce à l'optimisation des processus de changement et au contrôle de modèle
+                                        intégré,
+                                        ces procédures augmentent la productivité de votre planification.</p>
+                                    <a class="btn btn-primary" href="#"><strong>STRAKON dans le processus
+                                            BIM</strong></a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </section>
+    </div>
+
+
+</main>
+{% endblock body %}

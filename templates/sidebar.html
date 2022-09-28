@@ -1,0 +1,41 @@
+<div class="sticky">
+    <div class="card mb-4 wow fadeIn">
+        <div class="card-header">
+            <h6>les dernières nouvelles</h6>
+        </div>
+        <div class="card-body">
+            <ul class="list-group list-group-flush">
+                {% for n in blog_list %}
+                <li class="list-group-item">
+                        <a href="{{ n.get_absolute_url }}">
+                            <h6  style="color: #006cb8;" onmouseover="this.style.color='#fbba00';"
+                                onmouseout="this.style.color='#006cb8';">{{ n.name }}</h6>
+                        </a>
+                </li>
+                {% endfor %}
+            </ul>
+        </div>
+    </div>
+
+    <div class="card mb-4 wow fadeIn">
+        <div class="card-header">
+            <h6>Découvrez STRAKON en action</h6>
+        </div>
+        <div class="card-body">
+            <ul class="list-group list-group-flush">
+                <li class="list-group-item">
+                    <a href="{% url 'video' %}">
+                        <h6 style="color: #006cb8;" onmouseover="this.style.color='#fbba00';"
+                        onmouseout="this.style.color='#006cb8';"> Médiathèque</h6>
+                    </a>
+                </li>
+                <li class="list-group-item">
+                    <a href="{% url 'galerie' %}">
+                        <h6 style="color: #006cb8;" onmouseover="this.style.color='#fbba00';"
+                        onmouseout="this.style.color='#006cb8';"> Galerie</h6>
+                    </a>
+                </li>
+            </ul>
+        </div>
+    </div>
+</div>

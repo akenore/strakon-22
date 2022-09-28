@@ -1,0 +1,325 @@
+{% extends "base.html" %}
+{% load static %}
+{% block title %} Téléchargements {% endblock title %}
+
+{% block body %}
+<header>
+    <div class="edge-header"></div>
+</header>
+<main class="home-st">
+    <div class="container">
+        <nav aria-label="breadcrumb">
+            <ol class="breadcrumb">
+                <li class="breadcrumb-item"><a href="{% url 'accueil' %}">Accueil</a></li>
+                <li class="breadcrumb-item"><a href="{% url 'service_et_assistance' %}">Services</a></li>
+                <li class="breadcrumb-item active">Téléchargements</li>
+            </ol>
+        </nav>
+
+        <div class="card">
+            <div class="card-body">
+                <p class="card-text" style="font-size:1.1rem">
+                <div class="table-responsive">
+                    <table class="table">
+                        <thead>
+                            <tr>
+                                <th scope="col"><strong>Description</strong></th>
+                                <th scope="col"><strong>Exigence</strong></th>
+                                <th scope="col"><strong>Date</strong></th>
+                                <th scope="col"><strong>Taille du fichier</strong></th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <th scope="row" class="p-s">
+                                    <strong>
+                                        <a style="color: #006cb8; font-size:20px; font-weight: 400;"
+                                            onmouseover="this.style.color='#fbba00';"
+                                            onmouseout="this.style.color='#006cb8';"
+                                            href="https://download.strakon.fr/2021/STRAKON_2021SP1-1.zip">STRAKON
+                                            2021 SP1.1 incl.patch 1 64 Bit </a>
+                                    </strong>
+                                    <br>
+                                    <a style="color: #006cb8;" onmouseover="this.style.color='#fbba00';"
+                                        onmouseout="this.style.color='#006cb8';"
+                                        href="https://download.strakon.fr/2021/docs/STRAKON%202021%20Installation%20FR.pdf"
+                                        target="_blanc">Informations
+                                        d'installation/Descriptions des Service Pack</a>
+                                </th>
+                                <td class="p-s">STRAKON 2021 SP1.1<br>(toutes les langues)</td>
+                                <td class="p-s">28/06/2021</td>
+                                <td class="p-s">1,17 GO</td>
+                            </tr>
+                            <tr>
+                                <th scope="row" class="p-s">
+                                    <strong>
+                                        <a style="color: #006cb8; font-size:20px; font-weight: 400;"
+                                            onmouseover="this.style.color='#fbba00';"
+                                            onmouseout="this.style.color='#006cb8';"
+                                            href="https://download.strakon.fr/2021/docs/STRAKON%202021%20Nouveautés.pdf"
+                                            target="_blanc">Manuel
+                                            Strakon 2021 Nouveautés</a></strong><br>
+                                </th>
+                                <td class="p-s"></td>
+                                <td class="p-s"></td>
+                                <td class="p-s">4,9 MB</td>
+                            </tr>
+                            {% comment %}
+
+                            <!-- <tr>
+                            <th scope="row" class="p-s">
+                                <strong>
+                                    <a style="color: #006cb8; font-size:20px; font-weight: 400;" onmouseover="this.style.color='#fbba00';"
+                                        onmouseout="this.style.color='#006cb8';"
+                                        href="https://download.strakon.fr/2020/complet/patch4/STRAKON2020.zip">STRAKON 2020 SP1 64 Bit </a>
+                                </strong>
+                                <br>
+                                <a style="color: #006cb8;" onmouseover="this.style.color='#fbba00';" onmouseout="this.style.color='#006cb8';"
+                                    href="{% url 'patch4' %}">Informations d'installation/Descriptions des Service Pack</a>
+                            </th>
+                            <td class="p-s">STRAKON 2020 SP1 inc patch 4<br>(toutes les langues)</td>
+                            <td class="p-s">20/11/2020</td>
+                            <td class="p-s">857,6 MB</td>
+                        </tr>
+                            <tr>
+                                <th scope="row" class="p-s">
+                                    <strong>
+                                        <a style="color: #006cb8; font-size:20px; font-weight: 400;" onmouseover="this.style.color='#fbba00';"
+                                            onmouseout="this.style.color='#006cb8';"
+                                            href="https://download.strakon.fr/2020/complet/STRAKON_2020_Nouveaut%C3%A9s.pdf" target="_blanc">Manuel
+                                            Strakon 2020 Nouveautés</a></strong><br>
+                                </th>
+                                <td class="p-s"></td>
+                                <td class="p-s"></td>
+                                <td class="p-s">3,1 MB</td>
+                            </tr>
+                            <tr>
+                                <th scope="row" class="p-s">
+                                    <strong><a href="{% url 'contact' %}" style="color: #006cb8;font-size:18px; font-weight: 400;"
+                                            onmouseover="this.style.color='#fbba00';" onmouseout="this.style.color='#006cb8';">Manuel 3D Strakon
+                                            2020</a></strong><br>
+                            
+                                    Pour télécharger manuel 3D Strakon 2020<br>nous contacter
+                            
+                            
+                                </th>
+                                <td class="p-s"></td>
+                                <td class="p-s">01/09/2020</td>
+                                <td class="p-s">29 MB</td>
+                            </tr>
+                            <tr>
+                                <th scope="row" class="p-s">
+                                    <strong>
+                                        <a style="color: #006cb8; font-size:20px; font-weight: 400;" onmouseover="this.style.color='#fbba00';"
+                                            onmouseout="this.style.color='#006cb8';"
+                                            href="https://download.strakon.fr/2020/docs/Borchure_STRAKON2020.pdf" target="_blanc">Brochure Strakon
+                                            2020</a></strong><br>
+                                </th>
+                                <td class="p-s"></td>
+                                <td class="p-s"></td>
+                                <td class="p-s">77,7 MB</td>
+                            </tr> -->
+                            {% endcomment %}
+
+
+                        </tbody>
+                    </table>
+                </div>
+                </p>
+            </div>
+        </div>
+        <hr class="my-3">
+        <div class="card">
+            <div class="card-body">
+                <h4 class="card-title">STRAKON {% now "Y" %} en version complète (y compris les correctifs et/ou les
+                    Services
+                    Packs)</h4>
+                <p class="card-text" style="font-size:1.1rem">
+                    La version actuelle de STRAKON vous intéresse ?<br>
+                    Envoyer un message à <strong><a href="mailto:info@c2it.lu">info@c2it.lu</a></strong>
+                </p>
+
+
+            </div>
+        </div>
+        <hr class="my-3">
+        <div class="card">
+            <div class="card-body">
+                <h4 class="card-title">Logiciel de dimensionnement pour systèmes d'ancrage sandwich</h4>
+                <p class="card-text" style="font-size:1.1rem">
+                <div class="table-responsive">
+                    <table class="table">
+                        <tbody>
+                            <tr>
+                                <th scope="row" class="p-s">
+                                    <strong>
+                                        <a style="color: #006cb8; font-size:20px; font-weight: 400;"
+                                            onmouseover="this.style.color='#fbba00';"
+                                            onmouseout="this.style.color='#006cb8';"
+                                            href="https://downloads.halfen.com/software/application/halfen_software_spa.exe">
+                                            Halfen <i class="fas fa-external-link-alt"></i>
+                                        </a>
+                                    </strong>
+                                    <br>
+                                    Logiciel de dimensionnement pour 2D/3D
+                                </th>
+                                <td class="p-s"></td>
+                                <td class="p-s"><img class="img-fluid"
+                                        src="{% static 'frontend/img/partenaire/halfen.gif' %}" alt="Halfen"
+                                        loading="lazy"></td>
+                            </tr>
+                            <tr>
+                                <th scope="row" class="p-s">
+                                    <strong>
+                                        <a style="color: #006cb8; font-size:20px; font-weight: 400;"
+                                            onmouseover="this.style.color='#fbba00';"
+                                            onmouseout="this.style.color='#006cb8';"
+                                            href="https://www.pfeifer.info/de/produkte-leistungen/produkte/betoneinbauteile/downloads/pfeifer-suite-bemessungssoftware.html"
+                                            target="_blanc">
+                                            Pfeifer <i class="fas fa-external-link-alt"></i>
+                                        </a>
+                                    </strong>
+                                    <br>
+                                    Logiciel de dimensionnement pour 2D/3D
+                                </th>
+                                <td class="p-s"></td>
+                                <td class="p-s"><img class="img-fluid"
+                                        src="{% static 'frontend/img/partenaire/pfeifer.gif' %}" alt="Pfeifer"
+                                        loading="lazy"></td>
+                            </tr>
+                            <tr>
+                                <th scope="row" class="p-s">
+                                    <strong>
+                                        <a style="color: #006cb8; font-size:20px; font-weight: 400;"
+                                            onmouseover="this.style.color='#fbba00';"
+                                            onmouseout="this.style.color='#006cb8';"
+                                            href="https://www.philipp-gruppe.de/en/products/transport-and-mounting-systems"
+                                            target="_blanc">
+                                            PHILIPP <i class="fas fa-external-link-alt"></i>
+                                        </a>
+                                    </strong>
+                                    <br>
+                                    Logiciel de dimensionnement pour 2D/3D
+                                </th>
+                                <td class="p-s"></td>
+                                <td class="p-s"><img class="img-fluid"
+                                        src="{% static 'frontend/img/partenaire/philipp.gif' %}" alt="PHILIPP"
+                                        loading="lazy"></td>
+                            </tr>
+                            <tr>
+                                <th scope="row" class="p-s">
+                                    <strong>
+                                        <a style="color: #006cb8; font-size:20px; font-weight: 400;"
+                                            onmouseover="this.style.color='#fbba00';"
+                                            onmouseout="this.style.color='#006cb8';"
+                                            href="https://www.schoeck.fr/fr/logiciels-de-dimensionnement"
+                                            target="_blanc">
+                                            Schöck <i class="fas fa-external-link-alt"></i>
+                                        </a>
+                                    </strong>
+                                    <br>
+                                    Logiciel de dimensionnement pour 2D/3D
+                                </th>
+                                <td class="p-s"></td>
+                                <td class="p-s"><img class="img-fluid"
+                                        src="{% static 'frontend/img/partenaire/schoeck.jpg' %}" alt="Schöck"
+                                        loading="lazy"></td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+                </p>
+
+            </div>
+        </div>
+        <hr class="my-3">
+        <div class="card">
+            <div class="card-body">
+                <h4 class="card-title">Téléchargements pour les conducteurs, les téléspectateurs, etc.</h4>
+                <p class="card-text" style="font-size:1.1rem">
+                <div class="table-responsive">
+                    <table class="table">
+                        <tbody>
+                            <tr>
+                                <th scope="row" class="p-s">
+                                    <strong>
+                                        <a style="color: #006cb8; font-size:20px; font-weight: 400;"
+                                            onmouseover="this.style.color='#fbba00';"
+                                            onmouseout="this.style.color='#006cb8';"
+                                            href="https://supportportal.gemalto.com/csm/?id=kb_article_view&sysparm_article=KB0018320"
+                                            target="_blanc">
+                                            Driver for HASP SRM dongle <i class="fas fa-external-link-alt"></i>
+
+                                        </a><br>
+                                        Les pilotes HASP SRM actuels sont disponibles sur le site web de gemalto :
+                                    </strong>
+                                    <br>
+                                    Sentinel HASP/LDK Windows GUI Run-time Installer 7.90
+                                </th>
+                                <td class="p-s"></td>
+                                <td class="p-s"><img class="img-fluid"
+                                        src="{% static 'frontend/img/partenaire/gemalto.png' %}" alt="Gemalto"
+                                        loading="lazy"></td>
+                            </tr>
+                            <tr>
+                                <th scope="row" class="p-s">
+                                    <strong>
+                                        <a style="color: #006cb8; font-size:20px; font-weight: 400;"
+                                            onmouseover="this.style.color='#fbba00';"
+                                            onmouseout="this.style.color='#006cb8';"
+                                            href="https://www.architekt-meinel.de/software.php" target="_blanc">
+                                            PlotManager HPGL/PDF <i class="fas fa-external-link-alt"></i>
+                                        </a>
+                                    </strong>
+                                </th>
+                                <td class="p-s"></td>
+                                <td class="p-s"><img class="img-fluid"
+                                        src="{% static 'frontend/img/partenaire/meinel.png' %}" alt="Meinel"
+                                        loading="lazy"></td>
+                            </tr>
+                            <tr>
+                                <th scope="row" class="p-s">
+                                    <strong>
+                                        <a style="color: #006cb8; font-size:20px; font-weight: 400;"
+                                            onmouseover="this.style.color='#fbba00';"
+                                            onmouseout="this.style.color='#006cb8';"
+                                            href="https://www.autodesk.fr/products/dwg/viewers" target="_blanc">
+                                            Autodesk DWG TrueView <i class="fas fa-external-link-alt"></i>
+                                        </a>
+                                    </strong>
+                                </th>
+                                <td class="p-s"></td>
+                                <td class="p-s"><img class="img-fluid"
+                                        src="{% static 'frontend/img/partenaire/autodesk.png' %}" alt="Autodesk"
+                                        loading="lazy"></td>
+                            </tr>
+                            <tr>
+                                <th scope="row" class="p-s">
+                                    <strong>
+                                        <a style="color: #006cb8; font-size:20px; font-weight: 400;"
+                                            onmouseover="this.style.color='#fbba00';"
+                                            onmouseout="this.style.color='#006cb8';"
+                                            href="https://www.ceapoint.com/desite-share/" target="_blanc">
+                                            STRAKON BIM-Viewer - DESITE SHARE <i class="fas fa-external-link-alt"></i>
+                                        </a>
+                                    </strong>
+                                    <br>
+                                    Viewer for formats such as IFC and CPIXML,
+                                    <br>to control the data, meeting and presentation.
+                                </th>
+                                <td class="p-s"></td>
+                                <td class="p-s"><img class="img-fluid"
+                                        src="{% static 'frontend/img/partenaire/thinkproject.jpg' %}" alt="Thinkproject"
+                                        loading="lazy"></td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+                </p>
+
+            </div>
+        </div>
+
+    </div>
+</main>
+{% endblock body %}

@@ -1,0 +1,65 @@
+{% extends "views/admin/admin.html" %}
+{% load static %}
+{% block title %}Tous les articles{% endblock title %}
+
+{% block body %}
+<main>
+    <div class="container-fluid pb-5">
+        <div class="table-responsive">
+            <table class="table border-primary">
+                <thead>
+                    <tr>
+                        <th scope="col">Titre</th>
+                        <th scope="col">Auteur</th>
+                        <th scope="col">Catégories</th>
+                        <th scope="col">Date</th>
+
+                    </tr>
+                </thead>
+                <tbody>
+                    {% for i in page_obj %}
+                    <tr>
+                        <th scope="row" style="max-width: 250px;">{{ i.name }}</th>
+                        <td style="max-width: 200px;">{{ i.author }}</td>
+                        <td style="max-width: 200px;">
+                              {% for cat in category %}
+                              {{ i.cat.name }}
+                              {% endfor %}
+                        </td>
+                        <td style="max-width: 200px;">{{ i.post_date }}</td>
+                        <td>
+                            <div class="btn-group" role="group" aria-label="Basic example">
+                                <a href="{{ i.get_absolute_url }}" type="button"
+                                    class="btn btn-primary btn-rounded btn-sm">Détail</a>
+                                <a href="{% url 'modifier-article' i.slug %}" type="button" class="btn btn-primary btn-rounded btn-sm">Modifier</a>
+                                <a href="{% url 'supprimer-article' i.slug %}" type="button" class="btn btn-danger btn-rounded btn-sm">Supprimer</a>
+                            </div>
+                        </td>
+                    </tr>
+                    {% endfor %}
+                </tbody>
+
+            </table>
+            <div class="text-center mb-5">
+                <nav class="pagination justify-content-center" aria-label="Page navigation example">
+                  <ul class="step-links pagination pg-blue">
+                      {% if page_obj.has_previous %}
+                      <li class="page-item"><a class="page-link" href="?page=1"><i class="fas fa-angle-double-left mr-2"></i> premier</a></li>
+                      <li class="page-item"><a class="page-link" href="?page={{ page_obj.previous_page_number }}">précédent</a></li>
+                      {% endif %}
+              
+                      <li class="current page-item mx-3">
+                          Page {{ page_obj.number }} de {{ page_obj.paginator.num_pages }}.
+                      </li>
+              
+                      {% if page_obj.has_next %}
+                          <li class="page-item"><a class="page-link" href="?page={{ page_obj.next_page_number }}">suivant</a></li>
+                          <li class="page-item"><a class="page-link" href="?page={{ page_obj.paginator.num_pages }}">dernier<i class="fas fa-angle-double-right ml-2"></i></a></li>
+                      {% endif %}
+                  </ul>
+              </nav>
+          </div>
+        </div>
+    </div>
+</main>
+{% endblock body %}

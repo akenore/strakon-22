@@ -1,0 +1,232 @@
+{% extends "base.html" %}
+{% load static %}
+{% block title %} Accueil {% endblock title %}
+{% block extrahead %}
+<style>
+  body{
+    margin-top:0;
+}
+</style>
+{% endblock extrahead %}
+{% block body %}
+<header>
+  <div id="carousel-example-1z" class="carousel slide carousel-fade" data-ride="carousel">
+    <div class="carousel-inner" >
+      <div class="carousel-item active">
+        <div class="view strakon-slide">
+          <div class="plan">
+            <div class="rechts">
+              <picture>
+                <source media="(min-width: 1756px)" srcset="{% static 'frontend/img/slider/header_rechts_2.png' %}"
+                  type="image/svg+xml">
+                <source media="(min-width: 1601px)" srcset="{% static 'frontend/img/slider/header_rechts_1.png' %}"
+                  type="image/svg+xml">
+                <source media="(max-max: 1600px)" srcset="{% static 'frontend/img/home/header_rechts.png' %}">
+                <img src="{% static 'frontend/img/slider/header_rechts.png' %}" class="rechts" alt="Strakon"
+                  style="margin-top: 80px;" loading="lazy">
+              </picture>
+            </div>
+            <div class="links">
+              <picture>
+                <source media="(min-width: 1756px)" srcset="{% static 'frontend/img/slider/header_links_1.png' %}"
+                  type="image/svg+xml">
+                <source media="(max-width: 1601px)" srcset="{% static 'frontend/img/slider/header_links.png' %}"
+                  type="image/svg+xml">
+                <img src="{% static 'frontend/img/slider/header_links.png' %}" class="links" alt="Strakon"
+                  style="margin-top: 80px;" loading="lazy">
+              </picture>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</header>
+<main class="home-st">
+  <div class="container">
+    <section class="mt-5">
+      <div class="row">
+        <div class="col-md-4"></div>
+        <div class="col col-md-4">
+            <img src="{% static 'frontend/img/ifc.png' %}" class="img-fluid" alt="Strakon logo IFC" width="350" height="95" loading="lazy">
+        </div>
+        <div class="col-md-4"></div>
+      </div>
+      <h3 class="mx-auto mb-2 d-block text-center"
+            style="font-family: 'Coda', sans-serif;font-size: 2.5rem;color: rgb(88 88 90);">
+            <span >Le logiciel de CAO BIM pour la conception structurelle</span>
+          </h3>
+    </section>
+    
+    <section>
+      <div class="row">
+        <div class="col col-md-12">
+          <div class="card" style="z-index: 1">
+            <div class="card-body">
+              <div class="row">
+                <div class="col-md-7 table-responsive">
+                  <h3>Planifier l'avenir avec STRAKON</h3>
+                  <br>
+                  <table class="table-sm table-borderless">
+                    <tbody>
+                      <tr>
+                        <td><a class="nav-link" style="color: #006cb8; font-size:17px; font-weight: 400;"
+                            onmouseover="this.style.color='#fbba00';" onmouseout="this.style.color='#006cb8';"
+                            href="{% url 'ing_de_construction' %}"><strong>Ingénierie de construction</strong></a></td>
+                        <td style="font-size:16px;">Planification de l'ingénierie des ponts et des structures</td>
+                      </tr>
+                      <tr>
+                        <td><a class="nav-link" style="color: #006cb8; font-size:17px; font-weight: 400;"
+                            onmouseover="this.style.color='#fbba00';" onmouseout="this.style.color='#006cb8';"
+                            href="{% url 'construction_de_batiment' %}"><strong>Construction de bâtiments</strong></a></td>
+                        <td style="font-size:16px">Planification du coffrage et de l'armature</td>
+                      </tr>
+                      <tr>
+                        <td><a class="nav-link" style="color: #006cb8; font-size:17px; font-weight: 400;"
+                            onmouseover="this.style.color='#fbba00';" onmouseout="this.style.color='#006cb8';"
+                            href="{% url 'pieces_pref_structurelles' %}"><strong>Pièces préfabriquées structurelles</strong></a></td>
+                        <td style="font-size:16px">Planification structurelle préfabriquée</td>
+                      </tr>
+                      <td><a class="nav-link" style="color: #006cb8; font-size:17px; font-weight: 400;"
+                          onmouseover="this.style.color='#fbba00';" onmouseout="this.style.color='#006cb8';"
+                          href="{% url 'pieces_pref_unitisees' %}"><strong>Pièces préfabriquées unitisées</strong></a></td>
+                      <td style="font-size:16px">Planification des pièces préfabriquées unitisées</td>
+                      </tr>
+                      <td><a class="nav-link" style="color: #006cb8; font-size:17px; font-weight: 400;"
+                        onmouseover="this.style.color='#fbba00';" onmouseout="this.style.color='#006cb8';"
+                        href="{% url 'architecture_ing_en_structure' %}"><strong>Architecture pour les ingénieurs en structure</strong></a></td>
+                    <td style="font-size:16px">Planification générale</td>
+                    </tr>
+                      <td><a class="nav-link" style="color: #006cb8; font-size:17px; font-weight: 400;"
+                          onmouseover="this.style.color='#fbba00';" onmouseout="this.style.color='#006cb8';"
+                          href="{% url 'bim' %}"><strong>BIM (Modélisation des informations du bâtiment)</strong></a></td>
+                      <td style="font-size:16px">Processus de planification optimisé</td>
+                      </tr>
+                      <td><a class="nav-link" style="color: #006cb8; font-size:17px; font-weight: 400;"
+                          onmouseover="this.style.color='#fbba00';" onmouseout="this.style.color='#006cb8';"
+                          href="{% url 'interfaces' %}"><strong>Interfaces</strong></a></td>
+                      <td style="font-size:16px">Echange de données simple et rapide</td>
+                      </tr>
+
+                    </tbody>
+                  </table>
+                  <a class="btn btn-primary" href="{% url 'logiciel_cao' %}">Solutions <strong>STRAKON</strong></a>
+                </div>
+                <div class="col-md-5">
+                  <img class="img-fluid lazyload" src="{% static 'frontend/img/bim.jpg' %}" width="428" height="242" alt="BIM" loading="lazy">
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </section>
+    <hr class="mb-5">
+    <section>
+      <div class="row">
+        <div class="col-12">
+          <div class="card" style="z-index: 1">
+            <div class="card-body">
+              <div class="row">
+                <div class="col-md-4">
+                  {% for i in blog_list_img %}
+                  <img class="img-fluid" src="{{ i.image.url }}" alt="{{ i.name }}" width="337" height="190" loading="lazy">
+                  {% endfor %}
+                </div>
+                <div class="col-md-8">
+                  <h4>Actualités - Nous vous tiendrons au courant</h4>
+                  <ul style="list-style-type: none; margin-left: -50px">
+                    {% for b in blog_list %}
+                    <li>
+                      <a class="nav-link" style="color: #006cb8; font-size:17px"
+                        onmouseover="this.style.color='#fbba00';" onmouseout="this.style.color='#006cb8';"
+                        href="{{ b.get_absolute_url }}">{{ b.name }}</a>
+                    </li>
+                    {% endfor %}
+                  </ul>
+                  <a class="btn btn-primary" href="{% url 'blog' %}"><strong>Toutes les nouvelles</strong></a>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </section>
+    <hr class="mb-5">
+    <section>
+      <div class="row">
+        <div class="col-12">
+          <div class="card" style="z-index: 1">
+            <div class="card-body">
+              <div class="row">
+                <div class="col-md-4">
+                  <h2>Vidéos & Tutoriels</h2>
+                  <ul style="list-style-type: none; margin-left: -50px">
+                    {% for v in video_list_title %}
+                    <li>
+                      <a class="nav-link" style="color: #006cb8; font-size:17px"
+                        onmouseover="this.style.color='#fbba00';" onmouseout="this.style.color='#006cb8';" href="{% url 'video' %}">
+                        {{ v.name}}
+                      </a>
+                    </li>
+                    {% endfor %}
+                  </ul>
+                </div>
+                <div class="col-md-4">
+                  <h5 class="mt-5">Dernière vidéo :</h5>
+                  {% for l in latest_video %}
+                  <p class="p-s">{{ l.name }}</p>
+                  {% endfor %}
+                  <a class="btn btn-primary d-flex justify-content-center" href="{% url 'video' %}"><strong>Médiathéque</strong></a>
+                </div>
+                <div class="col-md-4">
+                  {% for l in latest_video %}
+                  <div class="embed-responsive embed-responsive-16by9 mt-4">
+                    <iframe title="{{ l.name }}" class="embed-responsive-item" width="560" height="315"
+                      src="https://www.youtube-nocookie.com/embed/{{ l.code }}" frameborder="0"
+                      allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture"
+                      allowfullscreen></iframe>
+                  </div>
+                  {% endfor %}
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </section>
+    <hr class="mb-5">
+    <section>
+      <div class="row">
+        <div class="col-12">
+          <div class="card" style="z-index: 1">
+            <div class="card-body">
+              <div class="row">
+                <div class="col-md-4">
+                  <img class="img-fluid" src="{% static 'frontend/img/stakon-ifc4-process.jpg' %}" width="337" height="190" alt="CAD 3D" loading="lazy">
+                </div>
+                <div class="col-md-8">
+                  <h2>Modélisation numérique dans le processus BIM</h2>
+                  <p class="p-s">STRAKON s'intègre dans le processus de planification en tant que solution logicielle
+                    intelligente pour les ingénieurs en structure en mettant l'accent sur la technologie BIM.
+                    Grâce à l'optimisation des processus de changement et au contrôle de modèle intégré,
+                    ces procédures augmentent la productivité de votre planification.</p>
+                  <a class="btn btn-primary" href="{% url 'bim' %}"><strong>STRAKON dans le processus BIM</strong></a>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </section>
+    
+    
+
+  </div>
+</main>
+
+{% endblock body %}

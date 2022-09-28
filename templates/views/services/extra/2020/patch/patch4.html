@@ -1,0 +1,104 @@
+{% extends "base.html" %}
+{% load static %}
+{% block title %} Installation STRAKON 2020 Service Pack 1 Patch 4 (64bit) {% endblock title %}
+{% block extrahead %}
+    <style>
+        li, span{
+            font-family: 'Roboto', sans-serif;
+    
+    font-weight: 300;
+    font-size: 18px;
+    color: #58585a;
+        }
+    </style>
+{% endblock extrahead %}
+{% block body %}
+<header>
+    <div class="edge-header"></div>
+</header>
+<main class="home-st">
+    <div class="container">
+        <nav aria-label="breadcrumb">
+            <ol class="breadcrumb">
+                <li class="breadcrumb-item"><a href="{% url 'accueil' %}">Accueil</a></li>
+                <li class="breadcrumb-item"><a href="{% url 'service_et_assistance' %}">Services</a></li>
+                <li class="breadcrumb-item"><a href="{% url 'telechargement' %}">Téléchargements</a></li>
+                <li class="breadcrumb-item active">Présnetation</li>
+            </ol>
+        </nav>
+        <div class="card">
+            <div class="card-body">
+                <div class="card-panel flow-text">
+                    <h2 class="red-text">Attention ! Saut de base de données</h2>
+                    <p class="p-s">Les plans qui commencent par le Service Pack 1 avec le <b>Concepteur de ponts/tunnels</b> ou
+                        <b>treillis</b> éditées et sauvegardées dans le Cube (seulement les nouvelles armatures du
+                        Cube) ne sont plus compatibles avec la version <b>2020</b> a <b>2020.5</b>.</p>
+                    <h2 class="red-text">Exigence!</h2>
+                    <p class="p-s">STRAKON 2020 SP1 (64 Bit) <span class="red-text"><b>doit</b></span> être installé!</p>
+                    <p class="p-s"><b>Téléchargement et installation</b></p>
+                    <ol type="decimal p-s">
+                        <li>Cliquez sur le fichier <b>STRAKON2020SP1Patch4.exe</b> et la commande
+                            <b>Sauvegarder</b>.</li>
+                        <li>Sélectionnez le répertoire dans lequel vous souhaitez enregistrer le fichier.</li>
+                        <li>Cliquez sur <b>Fermer</b>.</li>
+                        <li>Cliquez sur le fichier sauvegardé <b>STRAKON2020SP1Patch4.exe</b> et suivre les
+                            instructions d'installation.</li>
+                        <li>Démarrez STRAKON (les données de l'utilisateur seront maintenant installées
+                            automatiquement).</li>
+                        <li>Après l'installation, la version <b>STRAKON premium 2020 SP1.4.2 (64 Bit)</b> est
+                            disponible dans <b>Info about STRAKON</b> (<b>menu</b> ?)</li>
+                    </ol>
+                </div>
+            </div>
+        </div>
+        <hr class="my-3">
+        <div class="card">
+            <div class="card-body">
+                <div class="card-panel flow-text white">
+                    <h2>Thèmes révisés pour le patch 4</h2>
+                    <span><b>Modélisation 3D / Cube</b></span>
+                    <ul class="liste">
+                        <li>Cuboïde : les cuboïdes qui ne sont pas construits parallèlement à l'axe conservent leur
+                            position après la fin de la fonction.</li>
+                    </ul>
+                    <span><br><b>Vues en 3D</b></span>
+                    <ul class="liste">
+                        <li>Section nouvelle : Affichage correct de la ligne de section polygonale</li>
+                    </ul>
+                    <span><br><b>Armatures</b></span>
+                    <ul class="liste">
+                        <li>Armatures cube:
+                            <ul class="liste">
+                                <li>Lors de la sauvegarde du plan via "Enregistrer sous" ou lors de l'explosion d'un
+                                    composant Flex, les armatures cubiques sont désormais préservées, même s'il est
+                                    relié à un objet de déduction ou de déplacement.</li>
+                                <li>Treillis cube : Les treillis en stock peuvent être déplacés lorsque le deuxième
+                                    écran est allumé.</li>
+                            </ul>
+                        </li>
+                        <li>Vues des armatures en 3D:
+                            <ul class="liste">
+                                <li>Révision de la position des treillis dans la vue 3D.</li>
+                                <li>La forme de flexion libre d'une pièce d'installation est maintenant à nouveau
+                                    montrée.</li>
+                                <li>La correction des treillis cube par le symbole "C" à main levée, par exemple le
+                                    texte du treillis, est à nouveau possible.</li>
+                            </ul>
+                        </li>
+                        <span><br><b>Numérotations/interfaces/diffusion des données</b></span>
+                        <ul class="liste">
+                            <li>Importation IFC : Les objets ne sont mis à l'échelle qu'une fois lors de
+                                l’importation.</li>
+                        </ul>
+                        <span><br><b>Divers</b></span>
+                        <ul class="liste">
+                            <li>Coordonnées mondiales : Réparation de l'étiquetage dans le plan</li>
+                        </ul>
+                    </ul>
+                </div>
+
+            </div>
+        </div>
+    </div>
+</main>
+{% endblock body %}

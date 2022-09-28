@@ -1,0 +1,65 @@
+{% extends "base.html" %}
+{% load static %}
+{% block title %} Galerie {% endblock title %}
+
+{% block body %}
+<header>
+    <div class="edge-header"></div>
+</header>
+<main class="home-st">
+    <div class="container">
+        <nav aria-label="breadcrumb">
+            <ol class="breadcrumb">
+                <li class="breadcrumb-item"><a href="{% url 'accueil' %}">Accueil</a></li>
+                <li class="breadcrumb-item active">Galerie</li>
+            </ol>
+        </nav>
+        <div class="row row-eq-height">
+
+                <div id="mdb-lightbox-ui"></div>
+
+                <div class="mdb-lightbox">
+                    {% for i in page_obj %}
+                    <figure class="col-md-4 ">
+                        <a href="{{ i.image.url }}" data-size="1600x1067">
+                            <img alt="picture" src="{{ i.image.url }}" class="img-fluid" loading="lazy">
+                            <h6 class="text-center my-3">{{ i.name }}</h6>
+                        </a>
+                    </figure>
+                    {% endfor %}
+
+                </div>
+            <div class="col-md-12">
+                <div class="text-center">
+                    <nav class="pagination justify-content-center" aria-label="Page navigation example">
+                      <ul class="step-links pagination pg-red">
+                          {% if page_obj.has_previous %}
+                          <li class="page-item"><a class="page-link" href="?page=1"><i class="fas fa-angle-double-left mr-2"></i> premier</a></li>
+                          <li class="page-item"><a class="page-link" href="?page={{ page_obj.previous_page_number }}">précédent</a></li>
+                          {% endif %}
+                  
+                          <li class="current page-item mx-3">
+                              Page {{ page_obj.number }} de {{ page_obj.paginator.num_pages }}.
+                          </li>
+                  
+                          {% if page_obj.has_next %}
+                              <li class="page-item"><a class="page-link" href="?page={{ page_obj.next_page_number }}">suivant</a></li>
+                              <li class="page-item"><a class="page-link" href="?page={{ page_obj.paginator.num_pages }}">dernier<i class="fas fa-angle-double-right ml-2"></i></a></li>
+                          {% endif %}
+                      </ul>
+                  </nav>
+              </div>
+            </div>
+            
+        </div>
+    </div>
+</main>
+{% endblock body %}
+{% block extrajs %}
+<script type="text/javascript" src="{% static 'frontend/js/mdb.min.js' %}"></script>
+<script>
+    $(function () {
+        $("#mdb-lightbox-ui").load("{% static 'frontend/mdb-addons/mdb-lightbox-ui.html' %}");
+    });
+</script>
+{% endblock extrajs %}

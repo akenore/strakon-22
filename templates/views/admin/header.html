@@ -1,0 +1,130 @@
+{% load static %}
+<header>
+  <div id="slide-out" class="side-nav sn-bg-4 fixed">
+    <ul class="custom-scrollbar">
+      <li>
+        <div class="logo-wrapper waves-light">
+          <a href="{% url 'myadmin' %}"><img src="{% static 'frontend/img/logo.png' %}"
+              class="img-fluid flex-center"></a>
+        </div>
+      </li>
+      <li>
+        <ul class="collapsible collapsible-accordion">
+          <li>
+            <a href="{% url 'myadmin' %}" class="waves-effect"> <i class="fas fa-tachometer-alt mr-2"></i>Tableau de
+              board</a>
+          </li>
+          <li><a class="collapsible-header waves-effect arrow-r"><i class="far fa-newspaper mr-2"></i>Articles<i
+                class="fas fa-angle-down rotate-icon"></i></a>
+            <div class="collapsible-body">
+              <ul class="list-unstyled">
+                <li><a href="{% url 'ajouter-article' %}" class="waves-effect">Ajouter</a></li>
+                <li><a href="{% url 'listes-articles' %}" class="waves-effect">Tous les articles</a></li>
+                <li><a href="{% url 'categorie' %}" class="waves-effect">Catégories</a></li>
+              </ul>
+            </div>
+          </li>
+          <li><a href="{% url 'presentaion' %}" class="collapsible-header waves-effect arrow-r"><i
+                class="fas fa-project-diagram mr-2"></i>Présentations</a>
+            <div class="collapsible-body">
+              <ul class="list-unstyled">
+                
+          </li>
+        </ul>
+  </div>
+  </li>
+  <li><a class="collapsible-header waves-effect arrow-r"><i class="fas fa-key mr-2"></i> Licences<i
+        class="fas fa-angle-down rotate-icon"></i></a>
+    <div class="collapsible-body">
+      <ul class="list-unstyled">
+        <li><a href="{% url 'etudiant-list' %}" class="waves-effect">Étudiants</a>
+        </li>
+        <li><a href="{% url 'educative-list' %}" class="waves-effect">Établissements d'enseignement</a>
+        </li>
+      </ul>
+    </div>
+  </li>
+  <li><a class="collapsible-header waves-effect arrow-r"><i class="fab fa-youtube mr-2"></i> Médiatheque<i
+        class="fas fa-angle-down rotate-icon"></i></a>
+    <div class="collapsible-body">
+      <ul class="list-unstyled">
+        <li><a href="{% url 'ajouter-video' %}" class="waves-effect">Ajouter</a>
+        </li>
+        <li><a href="{% url 'list-video' %}" class="waves-effect">Tous les vidéos</a>
+        </li>
+      </ul>
+    </div>
+  </li>
+  <li><a class="collapsible-header waves-effect arrow-r"><i class="fas fa-photo-video mr-2"></i> Galerie<i
+        class="fas fa-angle-down rotate-icon"></i></a>
+    <div class="collapsible-body">
+      <ul class="list-unstyled">
+        <li><a href="{% url 'ajouter-image' %}" class="waves-effect">Ajouter</a>
+        </li>
+        <li><a href="{% url 'gallery-list' %}" class="waves-effect">Tous les images</a>
+        </li>
+      </ul>
+    </div>
+  </li>
+
+  <li>
+    <a href="{% url 'j2021-list' %}" class="waves-effect"> <i class="far fa-bell mr-2"></i>Journée
+      Utilisateurs 2021</a>
+  </li>
+  <li>
+    <a href="{% url 'j2022-list' %}" class="waves-effect"> <i class="far fa-bell mr-2"></i>Journée
+      Utilisateurs 2022</a>
+  </li>
+  <li>
+    <a href="{% url 'j2022plus-list' %}" class="waves-effect"> <i class="far fa-bell mr-2"></i>Journée
+      Utilisateurs 2022+</a>
+  </li>
+  <li>
+    <a href="{% url 'batimat-event-list' %}" class="waves-effect"> <i class="far fa-bell mr-2"></i>
+      Strakon spécial Batimat 2022
+    </a>
+  </li>
+  <li>
+    <a href="{% url 'fromation_list' %}" class="waves-effect"> <i class="fas fa-user-tie mr-2"></i>Formation Armatures Cube </a>
+  </li>
+  <li>
+    <a href="{% url 'presentaion_yt_list' %}" class="waves-effect"> <i class="fas fa-chart-line mr-2"></i>Analyse des influenceurs </a>
+  </li>
+  </ul>
+  </li>
+  </ul>
+  <div class="sidenav-bg mask-strong"></div>
+  </div>
+  <nav class="navbar fixed-top navbar-toggleable-md navbar-expand-lg scrolling-navbar double-nav">
+    <div class="float-left">
+      <a href="#" data-activates="slide-out" class="button-collapse black-text"><i class="fas fa-bars"></i></a>
+    </div>
+    <div class="breadcrumb-dn mr-auto">
+      <p>Bienvenue <span class="text-primary">{{ user.username }}</span></p>
+
+    </div>
+    <ul class="nav navbar-nav nav-flex-icons ml-auto">
+      <li class="nav-item mr-5">
+        {% if messages %}
+        {% for message in messages %}
+        <div class="alert alert-{{ message.tags }} alert-dismissible fade show" role="alert" id="msg">
+          {{ message }}
+          <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+          </button>
+        </div>
+        {% endfor %}
+        {% endif %}
+      </li>
+      <li class="nav-item">
+        <a href="{% url 'accueil' %}" class="nav-link"><i class="fas fa-globe"></i> <span
+            class="clearfix d-none d-sm-inline-block">Voir le site</span></a>
+      </li>
+      <li class="nav-item">
+        <a href="{% url 'account_logout' %}" class="nav-link"><i class="fas fa-sign-out-alt"></i> <span
+            class="clearfix d-none d-sm-inline-block">Se déconnecter</span></a>
+      </li>
+
+    </ul>
+  </nav>
+</header>

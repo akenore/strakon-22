@@ -1,0 +1,243 @@
+{% extends "base.html" %}
+{% load static %}
+{% block title %} Téléchargements {% endblock title %}
+{% block extrahead %}
+    
+{% endblock extrahead %}
+{% block body %}
+<header>
+    <div class="edge-header"></div>
+</header>
+<main class="home-st">
+    <div class="container">
+        <nav aria-label="breadcrumb">
+            <ol class="breadcrumb">
+                <li class="breadcrumb-item"><a href="{% url 'accueil' %}">Accueil</a></li>
+                <li class="breadcrumb-item"><a href="{% url 'service_et_assistance' %}">Services</a></li>
+                <li class="breadcrumb-item active">FAQ</li>
+            </ol>
+        </nav>
+        <div class="card">
+            <div class="card-body">
+                <p class="card-text">
+                <div class="alert alert-secondary" style="font-size:1.3rem">
+                    Le service en ligne <strong>FAQ</strong> vous offre une variété de solutions autour des applications
+                    des programmes STRAKON.
+                </div>
+                </p>
+            </div>
+        </div>
+        <hr class="my-3">
+        <div class="card">
+            <div class="card-body">
+                <div class="accordion md-accordion" id="accordionEx1" role="tablist" aria-multiselectable="true">
+                    <div class="card">
+                        <div class="card-header" role="tab" id="headingTwo1">
+                            <a class="collapsed" data-toggle="collapse" data-parent="#accordionEx1" href="#collapseTwo1"
+                                aria-expanded="false" aria-controls="collapseTwo1">
+                                <h5 class="mb-0">
+                                    Système d'exploitation/matériel recommandé pour STRAKON <i
+                                        class="fas fa-angle-down rotate-icon"></i>
+                                </h5>
+                            </a>
+                        </div>
+                        <div id="collapseTwo1" class="collapse" role="tabpanel" aria-labelledby="headingTwo1"
+                            data-parent="#accordionEx1">
+                            <div class="card-body">
+                                <p class="card-text">
+                                    Windows 10, 8.x
+                                <h4>Utilisation de STRAKON 2D</h4>
+                                <ul>
+                                    <li>Pas de demandes accrues sur le processeur, la carte graphique et la mémoire</li>
+                                    <li>Deux écrans, c'est l'idéal</li>
+                                </ul>
+                                <h4>STRAKON 3D/BIM utilisation supplémentaire</h4>
+                                <ul style="font-size: 1.1rem;">
+                                    <li>Optimal est un bon processeur à partir de 4 GHz avec plusieurs cœurs de calcul
+                                    </li>
+                                    <li>Carte graphique moyenne "Gaming" (OpenGL 4.0 ou supérieur)</li>
+                                    <li>32 Go de mémoire</li>
+                                </ul>
+                                <h4>STRAKON pour le bureau à distance</h4>
+                                Si vous voulez utiliser STRAKON via un bureau à distance
+                                (travail à partir de votre bureau à domicile sur l'ordinateur de votre entreprise),
+                                vous avez besoin d'un dongle réseau.
+                                En outre, toutes les cartes graphiques ne fonctionneront pas avec STRAKON en liaison
+                                avec Open GL
+                                (uniquement pour l'utilisation de STRAKON-Cube 3D) :
+                                <ul style="font-size: 1.1rem;">
+                                    <li>Les cartes graphiques NVIDIA GeForce ne fonctionnent pas.</li>
+                                    <li>Les cartes graphiques NVIDIA Quadro fonctionnent.</li>
+                                    <li>Avec les cartes AMD, l'image n'est pas uniforme jusqu'à présent. En cas de
+                                        doute, il convient de consulter le revendeur de matériel.</li>
+                                </ul>
+                                </p>
+                            </div>
+                        </div>
+
+                    </div>
+                    <div class="card">
+                        <div class="card-header" role="tab" id="headingTwo2">
+                            <a class="collapsed" data-toggle="collapse" data-parent="#accordionEx1"
+                                href="#collapseTwo21" aria-expanded="false" aria-controls="collapseTwo21">
+                                <h5 class="mb-0">
+                                    Strakon et services de bureau à distance (anciennement serveur terminal)<i
+                                        class="fas fa-angle-down rotate-icon"></i>
+                                </h5>
+                            </a>
+                        </div>
+                        <div id="collapseTwo21" class="collapse" role="tabpanel" aria-labelledby="headingTwo21"
+                            data-parent="#accordionEx1">
+                            <div class="card-body">
+                                <p class="card-text">
+                                <h5>STRAKON pour une utilisation de bureau à distance sur un PC</h5>
+                                Si vous voulez utiliser STRAKON via un bureau à distance
+                                (travail à partir de votre bureau à domicile sur l'ordinateur de votre entreprise),
+                                vous avez besoin d'un dongle réseau. En outre, toutes les cartes graphiques ne
+                                fonctionneront pas avec STRAKON
+                                en ce qui concerne Open GL :
+                                <ul style="font-size: 1.1rem;">
+                                    <li>Les cartes graphiques NVIDIA GeForce ne fonctionnent pas.</li>
+                                    <li>Les cartes graphiques NVIDIA Quadro fonctionnent.</li>
+                                    <li>Avec les cartes AMD, l'image n'est pas uniforme jusqu'à présent. En cas de
+                                        doute, il convient de consulter le revendeur de matériel.</li>
+                                </ul>
+                                <h4>STRAKON pour une utilisation de bureau à distance sur un serveur avec différents
+                                    profils d'utilisateurs</h4>
+                                STRAKON est exécutable en tant que RemoteApp à partir de Windows Server 2016 Remote
+                                Desktop Services (RDS).
+                                (STRAKON doit être exploité avec une licence réseau.) Les performances 3D dépendent du
+                                matériel utilisé.
+                                Les Remote Desktop Services font partie intégrante de Microsoft Server 2016 et supérieur
+                                (avec la licence appropriée).
+                                </p>
+                            </div>
+                        </div>
+
+                    </div>
+                    <div class="card">
+                        <div class="card-header" role="tab" id="headingThree31">
+                            <a class="collapsed" data-toggle="collapse" data-parent="#accordionEx1"
+                                href="#collapseThree31" aria-expanded="false" aria-controls="collapseThree31">
+                                <h5 class="mb-0">
+                                    La barre d'outils n'est pas disponible <i class="fas fa-angle-down rotate-icon"></i>
+                                </h5>
+                            </a>
+                        </div>
+                        <div id="collapseThree31" class="collapse" role="tabpanel" aria-labelledby="headingThree31"
+                            data-parent="#accordionEx1">
+                            <div class="card-body">
+                                <p class="card-text">
+                                <h4>Question</h4>
+                                Dans STRAKON, le réticule ne peut pas être déplacé vers la barre d'outils avec le codeur
+                                de coordonnées
+                                Wacom après avoir changé le moniteur ou la résolution de l'écran.
+                                <h4>Réponse</h4>
+                                <ul>
+                                    <li>Fermer STRAKON</li>
+                                    <li><strong>Démarrer > Programmes > Wacom Tablet > Wacom Tablet Preferences File
+                                            Utility > Mes préférences > supprimer</strong></li>
+                                    <li><strong>Démarrer > Tous les programmes > Wacom Tablet > Wacom Tablet
+                                            Properties</strong></li>
+                                    Placez le stylo sur la tablette et reconfigurez les boutons du stylo comme suit :
+                                    <ul>
+                                        <li>pointe du stylo > désactivé</li>
+                                        <li>bouton à bascule inférieur > cliquer</li>
+                                        <li>bouton à bascule supérieur > clic droit de la souris</li>
+                                    </ul>
+                                </ul>
+                                </p>
+                            </div>
+                        </div>
+
+                    </div>
+
+                    <div class="card">
+                        <div class="card-header" role="tab" id="headingThree31">
+                            <a class="collapsed" data-toggle="collapse" data-parent="#accordionEx1"
+                                href="#collapseThree41" aria-expanded="false" aria-controls="collapseThree31">
+                                <h5 class="mb-0">
+                                    Votre temps d'utilisation expirera dans quelques jours <i
+                                        class="fas fa-angle-down rotate-icon"></i>
+                                </h5>
+                            </a>
+                        </div>
+                        <div id="collapseThree41" class="collapse" role="tabpanel" aria-labelledby="headingThree31"
+                            data-parent="#accordionEx1">
+                            <div class="card-body">
+                                <p class="card-text">
+                                <h4>Question</h4>
+                                Au démarrage de STRAKON, le message <strong>Votre temps d'utilisation a expiré dans
+                                    quelques jours</strong> s'affiche.
+                                <h4>Réponse</h4>
+                                Via <strong>Démarrer > Tous les programmes > DICAD > Dongletest</strong>, vérifiez si la
+                                version actuelle,
+                                par exemple la version 20xx, est répertoriée derrière le numéro de <strong>version
+                                    STRAKON.</strong>
+                                Si c'est le cas, vous pouvez continuer à travailler sans problème.
+                                Après l'expiration du délai d'utilisation, le message n'est plus affiché. <br>
+                                Si le numéro de la version actuelle n'est pas indiqué, veuillez contacter votre
+                                représentant commercial.
+                                </p>
+                            </div>
+                        </div>
+
+                    </div>
+
+                    <div class="card">
+                        <div class="card-header" role="tab" id="headingThree31">
+                            <a class="collapsed" data-toggle="collapse" data-parent="#accordionEx1"
+                                href="#collapseThree51" aria-expanded="false" aria-controls="collapseThree31">
+                                <h5 class="mb-0">
+                                    Crosshair dessine une piste <i class="fas fa-angle-down rotate-icon"></i>
+                                </h5>
+                            </a>
+                        </div>
+
+                        <div id="collapseThree51" class="collapse" role="tabpanel" aria-labelledby="headingThree31"
+                            data-parent="#accordionEx1">
+                            <div class="card-body">
+                                <p class="cadr-text">
+                                <h4>Question</h4>
+                                Lorsque le réticule est déplacé, une piste est tracée.
+                                <h4>Réponse</h4>
+                                <ul>
+                                    <li>Fermer STRAKON</li>
+                                    <li>Ouvrez les paramètres graphiques de Windows et ajustez la taille de la police à
+                                        la valeur par défaut de 96 dpi ou 100%.</li>
+                                </ul>
+                                </p>
+                            </div>
+                        </div>
+
+                    </div>
+
+                    <div class="card">
+                        <div class="card-header" role="tab" id="headingThree31">
+                            <a class="collapsed" data-toggle="collapse" data-parent="#accordionEx1"
+                                href="#collapseThree61" aria-expanded="false" aria-controls="collapseThree31">
+                                <h5 class="mb-0">
+                                    Où puis-je trouver des manuels et des vidéos ? <i class="fas fa-angle-down rotate-icon"></i>
+                                </h5>
+                            </a>
+                        </div>
+
+                        <div id="collapseThree61" class="collapse" role="tabpanel" aria-labelledby="headingThree31"
+                            data-parent="#accordionEx1">
+                            <div class="card-body">
+                                <p class="cadr-text">
+                                <h4>Question</h4>
+                                Où puis-je trouver des manuels et des vidéos ?
+                                <h4>Réponse</h4>
+                                Les manuels, vidéos et brochures sont disponibles dans STRAKON via le menu
+                                </p>
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</main>
+{% endblock body %}

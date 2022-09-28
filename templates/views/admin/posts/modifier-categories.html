@@ -1,0 +1,28 @@
+{% extends "views/admin/admin.html" %}
+{% load static %}
+{% load crispy_forms_tags %}
+{% block title %}Modifier Catégories{% endblock title %}
+
+{% block body %}
+<main>
+    <div class="container-fluid">
+        <div class="card card-cascade wider reverse my-4 pb-5">
+            <div class="card-body card-body-cascade wow fadeIn" data-wow-delay="0.2s">
+                <div class="row">
+                    <div class="col-md-6">
+                        <form method="POST" enctype="multipart/form-data">
+                            {% csrf_token %}
+                            {{ form.name|as_crispy_field }}
+                            <button type="submit" class="btn btn-primary">Mettre à jour</button>
+                        </form>
+                    </div>
+                    <div class="col-md-6"><p>date de publication: {{ object.post_date }}</p></div>
+                </div>
+                        
+                        
+                </div>
+            </div>
+        </div>
+    </div>
+</main>
+{% endblock body %}

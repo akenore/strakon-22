@@ -1,0 +1,169 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block title %}BIM - Modélisation des informations du bâtiment{% endblock title %}
+
+{% block body %}
+<header>
+    <div class="edge-header"></div>
+</header>
+<main class="mt-3 home-st">
+    <div class="container">
+        <nav aria-label="breadcrumb">
+            <ol class="breadcrumb">
+                <li class="breadcrumb-item"><a href="{% url 'accueil' %}">Accueil</a></li>
+                <li class="breadcrumb-item"><a href="{% url 'logiciel_cao' %}">Logiciel et Solution</a></li>
+                <li class="breadcrumb-item active">BIM - Modélisation des informations du bâtiment</li>
+            </ol>
+        </nav>
+        <section class="mt-4">
+            <div id="mdb-lightbox-ui"></div>
+                <div class="mdb-lightbox">
+                    <div class="row">
+                        <figure class="col-md-4">
+                            <a href="{% static 'frontend/img/products/thumbnail/import-ifc.jpg' %}"
+                                data-size="1600x1067" data-toggle="modal" data-target="#im1">
+                                <img src="{% static 'frontend/img/products/thumbnail/import-ifc.jpg' %}"
+                                    class="img-fluid" loading="lazy" alt="ifc"/>
+                            </a>
+                        </figure>
+
+                        <figure class="col-md-4">
+                            <a href="{% static 'frontend/img/products/thumbnail/roof-construction.jpg' %}"
+                                data-size="1600x1067" data-toggle="modal" data-target="#im2">
+                                <img src="{% static 'frontend/img/products/thumbnail/roof-construction.jpg' %}"
+                                    class="img-fluid" loading="lazy" alt="roof construction"/>
+                            </a>
+                        </figure>
+
+                        <figure class="col-md-4">
+                            <a href="{% static 'frontend/img/products/thumbnail/solid-construction.jpg' %}"
+                                data-size="1600x1067" data-toggle="modal" data-target="#im3">
+                                <img src="{% static 'frontend/img/products/thumbnail/solid-construction.jpg' %}"
+                                    class="img-fluid" loading="lazy" alt="solid construction"/>
+                            </a>
+                        </figure>
+                    </div>
+                </div>
+            
+            <div class="row">
+                <div class="col-md-8 mb-4">
+                    <div class="card mb-4 wow fadeIn">
+                        <div class="card-body">
+
+                            <h2 class="my-4 ">Qu’est-ce que le BIM? </h2>
+                            <p class="h5 my-4 p-s">
+                                Planifier – Construire – Implémenter – Gérer
+                            </p>
+                            <p class="p-s">
+                                BIM signifie Building Information Modeling.
+                                Il s’agit d’un processus de planification qui met l’accent sur la sécurité des coûts,
+                                le respect des délais, l’amélioration de la qualité et la durabilité. En plus de la
+                                planification,
+                                la méthode BIM est également axée sur la construction et la gestion de bâtiments.
+                            </p>
+                            <p class="p-s">
+                                Concrètement, le BIM permet à tous les participants au projet de travailler ensemble
+                                plus tôt,
+                                dans un réseau plus étroit, en coordonnant leurs actions avec les partenaires du projet.
+                                En conséquence,
+                                la qualité du processus de planification dans son ensemble s’améliore et une
+                                replanification ultérieure peut être évitée.
+                            </p>
+                            <p class="h5 my-4 p-s">
+                                Ouvrir le transfert de données BIM
+                            </p>
+                            <p class="p-s">
+                                Afin de prendre en charge de manière optimale un processus BIM, des solutions
+                                logicielles compatibles BIM sont nécessaires.
+                                Tous les partenaires du projet utilisent leurs propres applications spécialisées.
+                                Nous pourrions apprendre du passé que le BIM ne fonctionne pas avec un seul modèle que
+                                tous les planificateurs utilisent simultanément.
+                                Au lieu de cela, tous les partenaires du projet conservent leur propre modèle dans le
+                                logiciel d’application correspondant.
+                                Cependant, ces modèles doivent être intelligemment coordonnés les uns avec les autres.
+                            </p>
+                            <p class="p-s">
+                                Avec le <a href="{% url 'ing_de_construction' %}"><strong>logiciel de CAO STRAKON</strong></a>, vous
+                                disposez d’un excellent outil BIM pour la planification structurelle,
+                                qui vous permet de vous intégrer parfaitement aux chaînes de processus BIM. Par exemple,
+                                vous recevez des données IFC 3D de l’architecte,
+                                que vous pouvez utiliser dans STRAKON pour la planification des coffrages et des
+                                armatures.
+                                Vous pouvez ensuite transmettre ce modèle d’ingénierie à la planification MEP via IFC,
+                                par exemple.
+                                Le programme de CAO STRAKON soutient activement le concept Open BIM.
+                            </p>
+                            <p class="h5 my-4 p-s">
+                                Modifications et vérification du modèle
+                            </p>
+                            <p class="p-s">
+                                S’il y a des changements dans le projet, vous pouvez facilement le saisir dans le modèle
+                                STRAKON-3D.
+                                Ceci est fait manuellement ou automatiquement. Lorsque des modifications sont apportées,
+                                tous les plans de coffrage et de ferraillage dérivés du modèle structurel sont
+                                automatiquement mis à jour.
+                                Le renforcement, la représentation des barres, les listes, les données de transfert,
+                                le dimensionnement et les hachures sont inclus intelligemment et sont donc corrects et à
+                                jour tout au long du projet.
+                            </p>
+                            <p class="p-s">
+                                Avec STRAKON, vous recevez automatiquement de nombreuses informations d’un modèle.
+                                Le BIM-Checker intégré (Model-Checker) permet une comparaison facile entre différents
+                                modèles (de différents partenaires de projet,
+                                plusieurs niveaux d’index ou variantes de projet). Par exemple, vous pouvez laisser le
+                                logiciel comparer le modèle du MEP avec votre modèle structurel,
+                                et STRAKON vous indiquera où des problèmes peuvent survenir.
+                            </p>
+                            <p class="h5 my-4 p-s">
+                                Quel est le modèle BIM?
+                            </p>
+                            <p class="p-s">
+                                Le modèle BIM comprend différents modèles techniques, intégrés dans le modèle de
+                                coordination BIM.<br>
+                                <img src="{% static 'frontend/img/products/thumbnail/bim.jpg' %}" alt="BIM Strakon"
+                                    class="img-fluid" loading="lazy">
+                            </p>
+                            <p class="h5 my-4 p-s">
+                                Développement et solutions BIM – L’avenir de la construction
+                            </p>
+                            <p class="p-s">
+                                DICAD Systeme GmbH est membre de <a href="http://www.buildingsmart.de/"
+                                    target="_blanc"><strong>buildingSMART</strong></a>.
+                                Cette organisation élabore et définit des normes pour la modélisation des informations
+                                du bâtiment et certifie le format d’échange IFC.
+                                DICAD est activement représenté dans le groupe d’utilisateurs de conception de
+                                structures de buildingSMART.
+                                Cela permet un développement ultérieur coordonné et pratique des normes BIM dans le
+                                programme de CAO STRAKON.
+                            </p>
+                            <p class="h5 my-4 p-s">
+                                Logiciel de CAO BIM pour les ingénieurs en structure
+                            </p>
+                            <p class="p-s">
+                                Avec STRAKON, vous obtenez un logiciel de CAO compatible BIM très économique et pratique
+                                pour la planification de la construction,
+                                du coffrage et du ferraillage. La technologie « Cube » spécialement développée vous
+                                inspirera.
+                            </p>
+                        </div>
+
+                    </div>
+                </div>
+                <div class="col-md-4 mb-4">
+                    {% include "sidebar.html" %}
+                </div>
+        </section>
+    </div>
+</main>
+
+
+{% endblock body %}
+
+{% block extrajs %}
+<script type="text/javascript" src="{% static 'frontend/js/mdb.min.js' %}"></script>
+<script>
+    $(function () {
+        $("#mdb-lightbox-ui").load("{% static 'frontend/mdb-addons/mdb-lightbox-ui.html' %}");
+    });
+</script>
+{% endblock extrajs %}

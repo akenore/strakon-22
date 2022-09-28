@@ -1,0 +1,111 @@
+{% extends "base.html" %}
+{% load static %}
+{% load crispy_forms_tags %}
+{% block title %} Conditions d'utilisation de la licence d'enseignement STRAKON {% endblock title %}
+
+{% block body %}
+<header>
+    <div class="edge-header"></div>
+</header>
+<main class="home-st">
+    <div class="container">
+        <nav aria-label="breadcrumb">
+            <ol class="breadcrumb">
+                <li class="breadcrumb-item"><a href="{% url 'accueil' %}">Accueil</a></li>
+                <li class="breadcrumb-item"><a href="{% url 'licence' %}">Licence</a></li>
+                <li class="breadcrumb-item active">Conditions d'utilisation de la licence d'enseignement STRAKON</li>
+            </ol>
+        </nav>
+        <div class="card">
+            <div class="card-body">
+                <li><strong>1.1 Droit d'utilisation</strong></li>
+                <p class="text-justify">
+                    L'établissement d'enseignement reçoit un droit non exclusif et non transférable d'utiliser le
+                    système de CAO 2D/3D/BIM STRAKON. L'utilisation du programme est limitée à l'enseignement et à la
+                    recherche. Autres utilisations, notamment d'un
+                    de nature commerciale, sont interdites. Des licences de formation distinctes sont disponibles pour
+                    le travail commercial en formation.
+                    Les projets créés avec la licence d'enseignement STRAKON ne sont pas compatibles avec la licence
+                    commerciale STRAKON. Le site
+                    le programme et la documentation ne peuvent être mis à la disposition de tiers sans le consentement
+                    du donneur de licence. En cas de
+                    des dommages et intérêts sont à payer en cas de mauvaise utilisation.
+                </p>
+                <li><strong>1.2 Livraison</strong></li>
+                <p class="text-justify">
+                    La livraison n'a lieu <strong>qu'après l'acceptation des conditions d'utilisation.</strong>
+                    Le concédant de licence fournit le programme via un lien de téléchargement. L'installation du
+                    programme est effectuée par l'établissement d'enseignement.
+                    Le programme est automatiquement activé lors de l'installation et est exécutable pendant environ 1,5
+                    an après la sortie de la version actuelle de STRAKON student. Les questions peuvent être envoyées
+                    directement à DICAD par e-mail à hotline@dicad.de.
+                    peut être envoyé.
+                </p>
+                <li><strong>1.3 Prix</strong></li>
+                <p class="text-justify">
+                    L'établissement d'enseignement reçoit une licence gratuite du système de CAO STRAKON dans la version
+                    actuelle pour un usage non commercial.
+                </p>
+                <li><strong>1.4 Garantie</strong></li>
+                <p class="text-justify">
+                    Le concédant garantit que le programme a été développé et testé avec soin. <br>
+                    Le concédant de licence garantit que le programme fourni est exempt de droits de propriété
+                    intellectuelle de tiers qui restreignent l'utilisation que vous en faites.<br>
+                    L'opérabilité sans restriction ne peut être garantie pour le matériel et les logiciels fournis. Le
+                    sans-faute
+                    la fonctionnalité du logiciel diffusé par le concédant ne peut être garantie.
+                </p>
+                <li><strong>1.5 Responsabilité</strong></li>
+                <p class="text-justify">
+                    La responsabilité du concédant est limitée à la garantie prévue à l'article 1.4 du présent contrat.
+                    Toute autre réclamation est exclue pour toutes les livraisons et prestations. Il n'y aura aucune
+                    demande de dommages et intérêts de quelque nature que ce soit
+                    et aucune responsabilité pour les coûts indirects consécutifs, les dommages directs, les pertes
+                    financières sur les données enregistrées ou les violations
+                    contre les obligations secondaires et autres. Le concédant n'est pas responsable des erreurs
+                    résultant d'une manipulation inappropriée par le client. En particulier, toute responsabilité pour
+                    la perte de données résultant d'erreurs d'application ou d'exploitation de STRAKON est exclue.
+                </p>
+                <li><strong>1.6 Propriété / droits de propriété</strong></li>
+                <p class="text-justify">
+                    Tous les droits d'auteur et de brevet du programme, de la documentation et des programmes de
+                    démonstration sont la propriété exclusive du donneur de licence.
+                    sont la propriété exclusive du concédant.
+                    L'établissement d'enseignement ne peut pas copier, modifier ou mettre à la disposition de tiers à
+                    cette fin tout logiciel reçu du concédant.
+                </p>
+                <li><strong>1.7 Pénalités contractuelles</strong></li>
+                <p class="text-justify">
+                    En cas de violation de la clause 1.6 du présent contrat, une pénalité contractuelle d'un montant
+                    égal au prix selon la liste des prix en vigueur doit être versée à l'entreprise.
+                    Concédant de licence. Les autres obligations de paiement de dommages et intérêts n'en sont pas
+                    affectées.
+                </p>
+                <li><strong>1.8 Durée du contrat et résiliation</strong></li>
+                <p class="text-justify">
+                    Le contrat commence par l'acceptation des conditions d'utilisation.
+                </p>
+                <li><strong>1.9 Accords complémentaires</strong></li>
+                <p class="text-justify">
+                    Les modifications ou compléments au présent contrat doivent être faits par écrit pour être
+                    effectifs. <br>
+                    Le droit de la République fédérale d'Allemagne s'applique exclusivement au présent contrat. Le lieu
+                    de juridiction est Cologne. <br>
+                    Si certaines dispositions du présent contrat devaient être invalides ou perdre leur validité, cela
+                    n'affecterait pas le reste du contenu du présent contrat.
+                    Le contenu du présent contrat n'est pas affecté. Dans ce cas, les parties contractantes s'engagent à
+                    coopérer afin de remplacer la disposition invalide par une disposition qui correspond au but
+                    économique du présent contrat. Il en va de même au cas où l'application du présent contrat
+                    entraînerait des lacunes dans les dispositions contractuelles.
+                    devrait survenir.
+                </p>
+                <p class="text-justify">
+                    Nous espérons que vous apprécierez l'apprentissage du très puissant système de CAO 2D/3D/BIM
+                    STRAKON.
+                    Vous avez fait un bon choix !
+                </p>
+            </div>
+        </div>
+    </div>
+</main>
+{% endblock body %}

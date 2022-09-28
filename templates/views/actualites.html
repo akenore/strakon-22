@@ -1,0 +1,76 @@
+{% extends "base.html" %}
+{% load static %}
+{% block title %} Actualités {% endblock title %}
+{% block extrahead %}
+<style>
+    p {
+        font-family: 'Roboto', sans-serif;
+
+        font-weight: 300;
+        font-size: 18px;
+        color: #58585a;
+    }
+</style>
+{% endblock extrahead %}
+{% block body %}
+<header>
+    <div class="edge-header"></div>
+</header>
+<main>
+    <div class="container">
+        <nav aria-label="breadcrumb">
+            <ol class="breadcrumb">
+                <li class="breadcrumb-item"><a href="{% url 'accueil' %}">Accueil</a></li>
+                <li class="breadcrumb-item active">Actualités</li>
+            </ol>
+        </nav>
+
+        <section class="my-5">
+            {% for n in page_obj %}
+                <div class="row">
+                    <div class="col-lg-5">
+                        <div class="view overlay rounded z-depth-2 mb-lg-0 mb-4">
+                            <img class="img-fluid" src="{{ n.image.url }}"
+                                alt="Strakon news image" loading="lazy">
+                            <a>
+                                <div class="mask rgba-white-slight"></div>
+                            </a>
+                        </div>
+
+                    </div>
+                    <div class="col-lg-7">
+                        <h3 class="font-weight-bold mb-3"><strong>{{ n.name }}</strong></h3>
+                        <p>{{ n.view|safe|truncatewords:25 }}</p>
+                        <p></p>
+                        <a href="{{ n.get_absolute_url }}" class="btn btn-primary btn-md">Lire la suite</a>
+
+                    </div>
+
+                </div>
+                <hr class="my-5">
+            {% endfor %}
+            <div class="text-center">
+                  <nav class="pagination justify-content-center" aria-label="Page navigation example">
+                    <ul class="step-links pagination pg-blue">
+                        {% if page_obj.has_previous %}
+                        <li class="page-item"><a class="page-link" href="?page=1"><i class="fas fa-angle-double-left mr-2"></i> premier</a></li>
+                        <li class="page-item"><a class="page-link" href="?page={{ page_obj.previous_page_number }}">précédent</a></li>
+                        {% endif %}
+                
+                        <li class="current page-item mx-3">
+                            Page {{ page_obj.number }} de {{ page_obj.paginator.num_pages }}.
+                        </li>
+                
+                        {% if page_obj.has_next %}
+                            <li class="page-item"><a class="page-link" href="?page={{ page_obj.next_page_number }}">suivant</a></li>
+                            <li class="page-item"><a class="page-link" href="?page={{ page_obj.paginator.num_pages }}">dernier<i class="fas fa-angle-double-right ml-2"></i></a></li>
+                        {% endif %}
+                    </ul>
+                </nav>
+            </div>
+            
+                
+        </section>
+    </div>
+</main>
+{% endblock body %}

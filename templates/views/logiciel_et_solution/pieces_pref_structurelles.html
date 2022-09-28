@@ -1,0 +1,113 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block title %}Pièces préfabriquées structurelles{% endblock title %}
+
+{% block body %}
+<header>
+    <div class="edge-header"></div>
+</header>
+<main class="mt-3 home-st">
+    <div class="container">
+        <nav aria-label="breadcrumb">
+            <ol class="breadcrumb">
+                <li class="breadcrumb-item"><a href="{% url 'accueil' %}">Accueil</a></li>
+                <li class="breadcrumb-item"><a href="{% url 'logiciel_cao' %}">Logiciel et Solution</a></li>
+                <li class="breadcrumb-item active">Pièces préfabriquées structurelles</li>
+            </ol>
+        </nav>
+        <section class="mt-4">
+            <div id="mdb-lightbox-ui"></div>
+                <div class="mdb-lightbox">
+                    <div class="row">
+                        <figure class="col-md-4">
+                            <a href="{% static 'frontend/img/products/thumbnail/precast-building.jpg' %}"
+                                data-size="1600x1067" data-toggle="modal" data-target="#im1">
+                                <img src="{% static 'frontend/img/products/thumbnail/precast-building.jpg' %}"
+                                    class="img-fluid" loading="lazy" alt="strakon building"/>
+                            </a>
+                        </figure>
+
+                        <figure class="col-md-4">
+                            <a href="{% static 'frontend/img/products/thumbnail/building.jpg' %}" data-size="1600x1067"
+                                data-toggle="modal" data-target="#im2">
+                                <img src="{% static 'frontend/img/products/thumbnail/building.jpg' %}"
+                                    class="img-fluid" loading="lazy" alt="building"/>
+                            </a>
+                        </figure>
+
+                        <figure class="col-md-4">
+                            <a href="{% static 'frontend/img/products/thumbnail/beam-3d.jpg' %}" data-size="1600x1067"
+                                data-toggle="modal" data-target="#im3">
+                                <img src="{% static 'frontend/img/products/thumbnail/beam-3d.jpg' %}"
+                                    class="img-fluid" loading="lazy" alt="3d"/>
+                            </a>
+                        </figure>
+                    </div>
+                </div>
+            
+            <div class="row">
+                <div class="col-md-8 mb-4">
+                    <div class="card mb-4 wow fadeIn">
+                        <div class="card-body">
+
+                            <h2 class="my-4 ">Planification de préfabrication de structures avec STRAKON </h2>
+                            <p class="h5 my-4 p-s">
+                                Le logiciel de CAO STRAKON vous offre:
+                            <ul class="p-s">
+                                <li>planification des offres, planification des positions, planification générale,
+                                    dessins d’atelier, planification de la production, planification de l’assemblage
+                                </li>
+                                <li>planification rapide, moderne et économique de la conception, du coffrage et du
+                                    ferraillage</li>
+                                <li>Modèles de vue d’ensemble 3D liés aux plans de dessin 3D Shop</li>
+                                <li>plans 3D associatifs pour des changements rapides et une cohérence dans le projet
+                                </li>
+                                <li>armatures liées aux bords du coffrage pour corrections automatiques</li>
+                                <li>contrôle automatique de collision</li>
+                                <li>colonnes, poutres, protection contre le gel, murs sandwich, murs coupe-feu, puits,
+                                    escaliers, balcons</li>
+                                <li>module de coffrage lié à une fraiseuse 5 axes</li>
+                                <li>module d’escalier</li>
+                                <li>transfert des données de production pour l’ordinateur maître, les systèmes de
+                                    soudage de treillis, les plieuses, les lasers, etc. (Unitechnik, PXML, BVBS)</li>
+                                <li>Interfaces 2D et BIM vers les systèmes ERP et de contrôle de la production tels que
+                                    Betsy, Gesys, Priamos, Softbauware, Dr. Strauch, I-TWO …</li>
+                                <li>étiquetage automatique des pièces préfabriquées</li>
+                                <li>Inserts 2D et 3D et catalogues de pièces de montage en ligne</li>
+                                <li>lien automatique vers le logiciel de calcul des ancres sandwich (Philipp, Pfeifer,
+                                    Schöck, Halfen)</li>
+                                <li>listes automatiques de pièces préfabriquées et inserts</li>
+                                <li>STRAKON est le leader du marché allemand dans la planification de la construction
+                                    préfabriquée</li>
+                                <li>Planification BIM selon les règles de <a href="http://www.buildingsmart.de/"
+                                        target="_blanc"><strong>buildingSMART</strong></a></li>
+                                <li>Planification 3D avec la technologie « STRAKON Cube »</li>
+                                <li>très grand confort de modification</li>
+                                <li>plusieurs utilisateurs pour un projet en même temps</li>
+                            </ul>
+                            </p>
+
+
+
+                        </div>
+
+                    </div>
+                </div>
+                <div class="col-md-4 mb-4">
+                    {% include "sidebar.html" %}
+                </div>
+        </section>
+    </div>
+</main>
+
+
+{% endblock body %}
+
+{% block extrajs %}
+<script type="text/javascript" src="{% static 'frontend/js/mdb.min.js' %}"></script>
+<script>
+    $(function () {
+        $("#mdb-lightbox-ui").load("{% static 'frontend/mdb-addons/mdb-lightbox-ui.html' %}");
+    });
+</script>
+{% endblock extrajs %}

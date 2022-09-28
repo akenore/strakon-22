@@ -1,0 +1,90 @@
+{% load static %}
+{% load compress %}
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description"
+        content="Strakon, logiciel de construction pour les ingénieurs civils, concepteur structurel, les usines de pièces et architectes préfabriqués en béton">
+    <link rel="apple-touch-icon" sizes="57x57" href="{% static 'pwa/apple-icon-57x57.png' %}">
+    <link rel="apple-touch-icon" sizes="60x60" href="{% static 'pwa/apple-icon-60x60.png' %}">
+    <link rel="apple-touch-icon" sizes="72x72" href="{% static 'pwa/apple-icon-72x72.png' %}">
+    <link rel="apple-touch-icon" sizes="76x76" href="{% static 'pwa/apple-icon-76x76.png' %}">
+    <link rel="apple-touch-icon" sizes="114x114" href="{% static 'pwa/apple-icon-114x114.png' %}">
+    <link rel="apple-touch-icon" sizes="120x120" href="{% static 'pwa/apple-icon-120x120.png' %}">
+    <link rel="apple-touch-icon" sizes="144x144" href="{% static 'pwa/apple-icon-144x144.png' %}">
+    <link rel="apple-touch-icon" sizes="152x152" href="{% static 'pwa/apple-icon-152x152.png' %}">
+    <link rel="apple-touch-icon" sizes="180x180" href="{% static 'pwa/apple-icon-180x180.png' %}">
+    <link rel="icon" type="image/png" sizes="192x192" href="{% static 'pwa/android-icon-192x192.png' %}">
+    <link rel="icon" type="image/png" sizes="32x32" href="{% static 'pwa/favicon-32x32.png' %}">
+    <link rel="icon" type="image/png" sizes="96x96" href="{% static 'pwa/favicon-96x96.png' %}">
+    <link rel="icon" type="image/png" sizes="16x16" href="{% static 'pwa/favicon-16x16.png' %}">
+    <link rel="manifest" href="{% static 'pwa/manifest.json' %}">
+    <meta name="msapplication-TileColor" content="#ffffff">
+    <meta name="msapplication-TileImage" content="{% static 'pwa/ms-icon-144x144.png' %}">
+    <meta name="theme-color" content="#ffffff">
+
+    <title>Strakon Admin - {% block title %} {% endblock title %}</title>
+
+    {% compress css %}
+    <link rel="stylesheet" href="{% static 'frontend/css/bootstrap.min.css' %}">
+    <link rel="stylesheet" href="{% static 'frontend/css/mdb.min.css' %}">
+    <link rel="stylesheet" href="{% static 'frontend/css/addons/flag.min.css' %}">
+    <link rel="stylesheet" href="{% static 'frontend/css/style.css' %}">
+    {% endcompress %}
+    {% compress js %}
+    <script type="text/javascript" src="{% static 'frontend/js/jquery.min.js' %}"></script>
+    {% endcompress %}
+    {% block extrahead %} {% endblock extrahead %}
+</head>
+{% include "views/admin/header.html" %}
+
+<body class="fixed-sn white-skin">
+    {% block body %} {% endblock body %}
+    <div id="stop"></div>
+    {% include "views/admin/footer.html" %}
+    <script src="https://kit.fontawesome.com/fb83807808.js" crossorigin="anonymous"></script>
+    {% compress js %}
+    <script type="text/javascript" src="{% static 'frontend/js/popper.min.js' %}"></script>
+    <script type="text/javascript" src="{% static 'frontend/js/bootstrap.min.js' %}"></script>
+    <script type="text/javascript" src="{% static 'frontend/js/mdb.min.js' %}"></script>
+    {% endcompress %}
+    {% block extrajs %} {% endblock extrajs %}
+    <script>
+
+        setTimeout(function () {
+            if ($('#msg').length > 0) {
+                $('#msg').remove();
+            }
+        }, 3000)
+        $(function () {
+
+            $(".sticky").sticky({
+                topSpacing: 100,
+                zIndex: 2,
+                stopper: "#stop",
+            });
+
+        });
+
+        $('ul li a').filter(function () {
+            return this.href === location.href;
+        }).addClass('active');
+        
+
+        $(document).ready(() => {
+            // SideNav Button Initialization
+            $(".button-collapse").sideNav();
+            // SideNav Scrollbar Initialization
+            var sideNavScrollbar = document.querySelector('.custom-scrollbar');
+            var ps = new PerfectScrollbar(sideNavScrollbar);
+
+            new WOW().init();
+        });
+    </script>
+</body>
+
+</html>

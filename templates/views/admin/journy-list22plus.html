@@ -1,0 +1,42 @@
+{% extends "views/admin/admin.html" %}
+{% load static %}
+{% block title %}Journée utilisateur 2022+{% endblock title %}
+
+{% block body %}
+<main>
+    <div class="container-fluid">
+        <div class="card card-cascade wider reverse my-4 pb-5">
+            <div class="card-body card-body-cascade wow fadeIn" data-wow-delay="0.2s">
+                        <table class="table">
+                            <thead>
+                                <tr>
+                                    <th scope="col">Societé</th>
+                                    <th scope="col">Contact</th>
+                                    <th scope="col">Email</th>
+                                    <th scope="col">Numéro de téléphone</th>
+                                    <!-- <th>Date selectionnée</th> -->
+                                    <th scope="col">Date d'inscription</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                {% for i in object_list %}
+                                <tr>
+                                    <th scope="row">{{ i.nom_de_societe}}</th>
+                                    <td>{{ i.contact }}</td>
+                                    <td>{{ i.email }}</td>
+                                    <td>{{ i.accompagnee }}</td>
+                                    {% comment %}
+                                    <td>le {% for cat in selected_date %}{{ cat.day_num}},{% endfor %}</td>
+                                    {% endcomment %}
+                                    
+                                    
+                                    <td>{{ i.date }}</td>
+                                </tr>
+                                {% endfor %}
+                            </tbody>
+                        </table>
+            </div>
+        </div>
+    </div>
+</main>
+{% endblock body %}

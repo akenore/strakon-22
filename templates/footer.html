@@ -1,0 +1,143 @@
+{% load static %}
+<hr class="my-4">
+<section>
+  <div class="container">
+    <div class="row">
+      <div class="col-md-4 mb-4 d-flex align-items-stretch">
+        <div class="card">
+          <div class="view overlay">
+            <img class="card-img-top" src="{% static 'frontend/img/onlinepraesentation.png' %}" width="350" height="198" alt="strakon presentation" loading="lazy">
+            <a href="#!">
+              <div class="mask rgba-white-slight"></div>
+            </a>
+          </div>
+          <div class="card-body">
+            <h5 class="card-title">Présentation en ligne - en direct</h5>
+
+            <p class="card-text">Laissez-vous faire la démonstration des produits DICAD via Internet sans engagement.
+            </p>
+            <hr>
+            <a href="{% url 'demande_presentation' %}" class="black-text d-flex justify-content-end">
+              <h5 onmouseover="this.style.color='#fbba00';" onmouseout="this.style.color='#006cb8';"
+                style="color: #006cb8!important;"><i class="fas fa-angle-right mr-1"></i>Démonstration en direct
+              </h5>
+            </a>
+          </div>
+        </div>
+      </div>
+      <div class="col-md-4 mb-4 d-flex align-items-stretch">
+        <div class="card">
+          <div class="view overlay">
+            <img class="card-img-top" src="{% static 'frontend/img/students-2.png' %}" alt="Strakon students" width="350" height="198" loading="lazy">
+            <a href="#!">
+              <div class="mask rgba-white-slight"></div>
+            </a>
+          </div>
+          <div class="card-body">
+            <h5 class="card-title">Étudiants et Établissements d'enseignement</h5>
+
+            <p class="card-text">Licence gratuite pour votre étude</p>
+            <hr>
+            <a href="{% url 'licence' %}" class="black-text d-flex justify-content-end">
+              <h5 onmouseover="this.style.color='#fbba00';" onmouseout="this.style.color='#006cb8';"
+                style="color: #006cb8!important;"><i class="fas fa-angle-right mr-1"></i>Savoir plus
+              </h5>
+            </a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+<footer class="page-footer text-center font-small mt-4">
+  <div class="pt-4">
+    <div class="container text-center text-md-left">
+      <div class="row">
+        <div class="col-md-4 mt-md-0 mt-4">
+          <h6 class="text-uppercase"><strong style="color: #fbba00;">Strakon</strong></h6>
+          <p> Logiciel de construction pour les ingénieurs civils, concepteur structurel, les usines de pièces et
+            architectes préfabriqués en béton</p>
+        </div>
+        <hr class="clearfix w-100 d-md-none pb-3">
+        <div class="col-md-2 mb-md-0 mb-4">
+          <h6 class="text-uppercase"><strong style="color: #fbba00;">Contact</strong></h6>
+          <ul class="list-unstyled">
+            <li class="my-2">
+              <a href="{% url 'contact' %}">Contact</a>
+            </li>
+            <li class="my-2">
+              <a href="{% url 'demande_presentation' %}">Démander Présentation</a>
+            </li>
+            <li class="my-2">
+              <a href="{% url 'licence' %}">Licence d'Étudiants</a>
+            </li>
+          </ul>
+
+        </div>
+        <div class="col-md-2 mb-md-0 mb-4">
+          <h6 class="text-uppercase"><strong style="color: #fbba00;">Site</strong></h6>
+
+          <ul class="list-unstyled">
+            <li class="my-2">
+              <a href="{% url 'accueil' %}">Accueil</a>
+            </li>
+            <li class="my-2">
+              <a href="{% url 'logiciel_cao' %}">Logiciel et solution</a>
+            </li>
+            <li class="my-2">
+              <a href="{% url 'service_et_assistance' %}">Services</a>
+            </li>
+            <li class="my-2">
+              <a href="{% url 'blog' %}">Actualités</a>
+            </li>
+          </ul>
+
+        </div>
+        <div class="col-md-2 mb-md-0 mb-4">
+          <h6 class="text-uppercase"><strong style="color: #fbba00;">Liens Utiles</strong></h6>
+
+          <ul class="list-unstyled">
+            <li class="my-2">
+              <a href="https://www.youtube.com/channel/UC22awM3e_k7OUHMjF5VXwCQ" target="_blank" rel="noreferrer">Youtube</a>
+            </li>
+            <li class="my-2">
+              <a href="https://www.dicad.de/" target="_blank" rel="noreferrer">Dicad.de</a>
+            </li>
+            <li class="my-2">
+              <a href="https://www.c2it.lu/" target="_blank" rel="noreferrer">C2it.lu</a>
+            </li>
+            <li class="my-2">
+              <a href="https://forum.strakon.fr/" target="_blank" rel="noreferrer">Forum.strakon.fr</a>
+            </li>
+            
+          </ul>
+
+        </div>
+
+      </div>
+    </div>
+  </div>
+
+  <hr class="my-4">
+
+  <div class="footer-copyright py-3">
+    <div class="container">
+      <div class="row">
+        <div class="col-md-8">
+          <!-- <a class="float-left mr-3 my-2" href="#"><strong>Sitemap</strong></a> -->
+          <a class="float-left mr-3 my-2" href="{% url 'terms_and_conditions' %}"><strong>Termes et
+              conditions</strong></a>
+          <a class="float-left mr-3 my-2" href="{% url 'privacy_policy' %}"><strong>Politique de
+              confidentialité</strong></a>
+          <a class="float-left mr-3 my-2" href="{% url 'cookies_policy' %}"><strong>Politique de cookies</strong></a>
+        </div>
+        <div class="col-md-4">
+          ©2021
+          <a href="https://www.strakon.fr" rel="noreferrer" class="my-2">Strakon.fr</a>
+        </div>
+      </div>
+
+
+    </div>
+  </div>
+</footer>

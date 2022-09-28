@@ -1,0 +1,90 @@
+{% extends "base.html" %}
+{% load static %}
+{% block title %} Contact {% endblock title %}
+
+{% block body %}
+<header>
+    <div class="edge-header"></div>
+</header>
+<main class="home-st">
+    <div class="container">
+        <nav aria-label="breadcrumb">
+            <ol class="breadcrumb">
+                <li class="breadcrumb-item"><a href="{% url 'accueil' %}">Accueil</a></li>
+                <li class="breadcrumb-item active">Contact</li>
+            </ol>
+        </nav>
+        <div class="row">
+            <div class="col-md-3">
+                <div class="card">
+                    <div class="card-body">
+                        <h5 class="card-title"><i class="fas fa-home"></i> C2IT</h5>
+                        <p class="card-text" style="font-size:0.8rem">
+                            24 Robert Krieps,<br>
+                            L-4702 PETANGE
+                        </p>
+                        <hr class="my-3">
+                        <h5 class="card-title"><i class="fas fa-home"></i> WIBIM</h5>
+                        <p class="card-text" style="font-size:0.8rem">
+                            59 Rue de Ponthieu - Bureau 562,<br>
+                            Paris 75008
+                        </p>
+                        <hr class="my-3">
+                        <h5 class="card-title"><i class="fas fa-home"></i> ACS TECHNICS</h5>
+                        <p class="card-text" style="font-size:0.8rem">
+                            Toemaattragel,<br>
+                            B-9000 GENT
+                        </p>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-3">
+                <div class="card">
+                    <img class="card-img-top" src="{% static 'frontend/img/c2it-strakon20.jpg' %}" alt="C2IT" loading="lazy">
+                    <div class="card-body">
+                        <h4 class="card-title"><a>C2IT</a></h4><span>France - Luxembourg</span>
+                        <hr>
+                        <p class="card-text">
+                            <strong>Téléphone: <a href="tel:0035227996597">+352 27 996 597</a></strong>
+                        </p>
+                        <p class="card-text">
+                            <strong>Email: <a href="mailto:info@c2it.lu">info@c2it.lu</a></strong>
+                        </p>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-3">
+                <div class="card">
+                    <div class="my-2"></div>
+                    <img class="card-img-top mt-4" src="{% static 'frontend/img/logo-wibim.png' %}"  alt="WIBIM" loading="lazy">
+                    <div class="card-body">
+                        <h4 class="card-title"><a>WIBIM</a></h4><span> France - France</span>
+                        <hr>
+                        <p class="card-text">
+                            <strong>Téléphone: <a href="tel:0033767446404">+ 33 7 67 44 64 04</a></strong>
+                        </p>
+                        <p class="card-text">
+                            <strong>Email: <a href="mailto:contact@wibim.fr">contact@wibim.fr</a></strong>
+                        </p>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-3">
+                <div class="card">
+                    <img class="card-img-top" src="{% static 'frontend/img/acs-strakon20.jpg' %}" alt="ACS Technique" loading="lazy">
+                    <div class="card-body">
+                        <h4 class="card-title"><a>ACS TECHNICS</a></h4><span> Belgique - Hollande</span>
+                        <hr>
+                        <p class="card-text">
+                            <strong>Téléphone: <a href="tel:0032092400101">+32 (0)9 240 01 01</a></strong>
+                        </p>
+                        <p class="card-text">
+                            <strong>Email: <a href="mailto:info@acs-technics.be">info@acs-technics.be</a></strong>
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</main>
+{% endblock body %}

@@ -1,0 +1,168 @@
+{% extends "views/admin/admin.html" %}
+{% load static %}
+{% block title %}dashboard{% endblock title %}
+
+{% block body %}
+  <main>
+    <div class="container-fluid">
+      <div class="card card-cascade wider reverse my-4 pb-5">
+          <div class="row">
+            <div class="col-md-6 my-5">
+              <h6 class="text-info">Les dernier Articles ajouter</h6>
+              <hr>
+              <div class="table-responsive">
+                <table class="table table-sm">
+                  <thead>
+                    <tr>
+                      <th scope="col"></th>
+                      <th scope="col">Titre</th>
+                      <th scope="col">Date</th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    {% for n in news %}
+                      <tr>
+                        <th scope="row"><a href="{{ n.get_absolute_url }}"><img src="{{ n.image.url }}" alt="{{ n.name }}" class="img-thumbnail" style="width: 150px"></a></th>
+                        <td style="width: 200px;"><a href="{{ n.get_absolute_url }}">{{ n.name }}</a></td>
+                        <td>{{ n.post_date }}</td>
+                      </tr>
+                    {% endfor %}
+                  </tbody>
+              
+                </table>
+              </div>
+            </div>
+            <div class="col-md-6 my-5">
+              <h6 class="text-info">Demande de présentation</h6>
+              <hr>
+              <div class="table-responsive">
+                <table class="table table-sm">
+                  <thead>
+                    <tr>
+                      <th scope="col">Demandé par</th>
+                      <th scope="col">Type de présentations</th>
+                      <th scope="col">Date</th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    {% for p in presentation %}
+                    <tr>
+                      <th scope="row"><a href="{% url 'presentaion' %}">{{ p.societe }}</a></th>
+                      <td><a href="{% url 'presentaion' %}">{{ p.type_presentation }}</a></td>
+                      <td>{{ p.post_date }}</td>
+                    </tr>
+                    {% endfor %}
+                  </tbody>
+              
+                </table>
+              </div>
+            </div>
+          </div>
+          <div class="row">
+            <div class="col-md-6 my-5">
+              <h6 class="text-info">Demande de licence d'étudiant</h6>
+              <hr>
+              <div class="table-responsive">
+                <table class="table table-sm">
+                  <thead>
+                    <tr>
+                      <th scope="col">Demandé par</th>
+                      <th scope="col">Commande</th>
+                      <th scope="col">Date</th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    {% for l1 in licence_etudiant %}
+                    <tr>
+                      <th scope="row">{{ l1.name }}</th>
+                      <td>{{ l1.commande }}</td>
+                      <td>{{ l1.post_date }}</td>
+                    </tr>
+                    {% endfor %}
+                  </tbody>
+              
+                </table>
+              </div>
+            </div>
+            <div class="col-md-6 my-5">
+              <h6 class="text-info">Demande de licence éducative</h6>
+              <hr>
+              <div class="table-responsive">
+                <table class="table table-sm">
+                  <thead>
+                    <tr>
+                      <th scope="col">Demandé par</th>
+                      <th scope="col">Commande</th>
+                      <th scope="col">Date</th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    {% for l2 in licence_educative %}
+                    <tr>
+                      <th scope="row">{{ l2.name }}</th>
+                      <td>{{ l2.commande}}</td>
+                      <td>{{ l2.post_date }}</td>
+                    </tr>
+                    {% endfor %}
+                  </tbody>
+              
+                </table>
+              </div>
+            </div>
+          </div>
+          <div class="row">
+            <div class="col-md-6 my-5">
+              <h6 class="text-info">Les dernier Vidéos ajouter</h6>
+              <hr>
+              <div class="table-responsive">
+                <table class="table table-sm">
+                  <thead>
+                    <tr>
+                      <th scope="col"></th>
+                      <th scope="col">Titre</th>
+                      <th scope="col">Date</th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    {% for v in video %}
+                    <tr>
+                      <th scope="row"><a href="{% url 'list-video' %}"><img src="{{ v.image.url }}" alt="{{ v.name }}" class="img-thumbnail" style="width: 150px"></a></th>
+                      <td style="width: 200px;">{{ v.name }}</td>
+                      <td>{{ v.post_date }}</td>
+                    </tr>
+                    {% endfor %}
+                  </tbody>
+              
+                </table>
+              </div>
+            </div>
+            <div class="col-md-6 my-5">
+              <h6 class="text-info">Les dernier Images ajouter</h6>
+              <hr>
+              <div class="table-responsive">
+                <table class="table table-sm">
+                  <thead>
+                    <tr>
+                      <th scope="col"></th>
+                      <th scope="col">Titre</th>
+                      <th scope="col">Date</th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    {% for i in galerie %}
+                    <tr>
+                      <th scope="row"><a href="{% url 'gallery-list' %}"><img src="{{ i.image.url }}" alt="{{ i.name }}" class="img-thumbnail" style="width: 150px"></a></th>
+                      <td style="width: 200px;"><a href="{% url 'gallery-list' %}">{{ i.name }}</a></td>
+                      <td>{{ i.post_date }}</td>
+                    </tr>
+                    {% endfor %}
+                  </tbody>
+              
+                </table>
+              </div>
+            </div>
+          </div>
+      </div>
+    </div>
+  </main>
+{% endblock body %}
