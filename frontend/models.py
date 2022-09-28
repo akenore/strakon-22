@@ -4,8 +4,8 @@ from django.contrib.auth.models import User
 from django.urls import reverse
 from autoslug import AutoSlugField
 from ckeditor_uploader.fields import RichTextUploadingField
-
-
+from smart_selects.db_fields import ChainedForeignKey
+from cities_light.models import City, Region, Country
 class BlogCategories(models.Model):
 
     post_date = models.DateTimeField(_("Publié"), auto_now_add=True)
@@ -1559,7 +1559,9 @@ class Batimat(models.Model):
     phone = models.CharField(_('Téléphone'), max_length=200)
     address = models.CharField(_('Adresse'), max_length=200)
     code = models.CharField(_('Code Postal'), max_length=200)
-    country = models.CharField(_('Pays'), choices=COUNTRIES ,max_length=200)
+    # country = models.CharField(_('Pays'), choices=COUNTRIES ,max_length=200)
+    pays = models.ForeignKey(Country, on_delete=models.CASCADE)
+    ville = ChainedForeignKey(City, chained_field="pays", chained_model_field="country", auto_choose=True,sort=True)
     date = models.DateTimeField(auto_now_add=True)
 
     def __str__(self):

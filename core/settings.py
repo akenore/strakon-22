@@ -51,7 +51,9 @@ INSTALLED_APPS = [
     'crispy_forms',
     'compressor',
     'frontend',
-    'video'
+    'video',
+    'smart_selects',
+    'cities_light'
 ]
 
 MIDDLEWARE = [
@@ -171,8 +173,6 @@ COMPRESS_ROOT = os.path.join(BASE_DIR, 'static')
 COMPRESS_ENABLED = True
 
 
-
-
 # ACCOUNT_EMAIL_REQUIRED = True
 # DEFAULT_FROM_EMAIL = 'webmaster@giysco.com'
 # EMAIL_BACKEND = 'django.core.mail.backends.smtp.EmailBackend'
@@ -192,3 +192,8 @@ EMAIL_USE_TLS = True
 EMAIL_USE_SSL = False
 EMAIL_HOST_USER = "support@strakon.fr"
 EMAIL_HOST_PASSWORD = 'Str@kon#2021'
+
+CITIES_LIGHT_TRANSLATION_LANGUAGES = ['fr', 'en']
+# CITIES_LIGHT_INCLUDE_COUNTRIES = ['FR']
+CITIES_LIGHT_INCLUDE_CITY_TYPES = ['PPL', 'PPLA', 'PPLA2', 'PPLA3',
+                                   'PPLA4', 'PPLC', 'PPLF', 'PPLG', 'PPLL', 'PPLR', 'PPLS', 'STLMT', ]

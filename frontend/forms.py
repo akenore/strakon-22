@@ -206,7 +206,8 @@ class BatimatForm(forms.ModelForm):
         self.fields['phone'].widget.attrs.update({'class': 'form-control'})
         self.fields['address'].widget.attrs.update({'class': 'form-control'})
         self.fields['code'].widget.attrs.update({'class': 'form-control'})
-        self.fields['country'].widget.attrs.update({'class': 'form-control'})
+        self.fields['pays'].widget.attrs.update({'class': 'form-control'})
+        self.fields['ville'].widget.attrs.update({'class': 'form-control'})
         
 
     class Meta:

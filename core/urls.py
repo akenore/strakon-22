@@ -14,7 +14,7 @@ Including another URLconf
     2. Add a URL to urlpatterns:  path('blog/', include('blog.urls'))
 """
 from django.contrib import admin
-from django.urls import path, include
+from django.urls import path, include, re_path
 from django.conf import settings
 from django.conf.urls.static import static
 from django.views.generic import TemplateView
@@ -27,7 +27,8 @@ urlpatterns = [
     path('sw.js', (TemplateView.as_view(template_name='pwa/sw.js', content_type='application/javascript')), name='sw.js'),
     path('offline/', (TemplateView.as_view(template_name='pwa/offline.html')), name='offline'),
     path('robots.txt', (TemplateView.as_view(
-        template_name='pwa/robots.txt')), name='robots.txt')
+        template_name='pwa/robots.txt')), name='robots.txt'),
+    re_path('^chaining/', include('smart_selects.urls')),
 ]
 if settings.DEBUG:
     urlpatterns += static(settings.MEDIA_URL,
